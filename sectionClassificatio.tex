@@ -291,7 +291,7 @@ The Kullback-Leibler divergence of SPD matrices $\P_1, \P_2 \in \GenMa^C$ is giv
 The mean of SPD matrices $\P_\nb \in \GenMa^C$ induced by the Kullback-Leibler divergence is calculated iteratively \cite{chebbi_means_2012}. 
 %- logarithmic barrier function -> Log det divergence (Dhillon 2007)
 \\ \\ \textbf{Log-det divergence} \\
-Another function often used in Bregman divergences of symmetric matrices is the \emph{logarithmic barrier} \cite{chebbi_means_2012, dhillon_matrix_2007, cherian_efficient_2011, sra_positive_2016}
+Another function often used in Bregman divergences of symmetric matrices is the \emph{logarithmic barrier} \cite{chebbi_means_2012,dhillon_matrix_2007,cherian_efficient_2011,sra_positive_2016}
 \[ f(x) = -log(x) \rightarrow f(\P) = -\log \det(\P) \] 
 The corresponding divergence is called the \emph{log-det} divergence and is given by \cite{chebbi_means_2012}:
 \begin{equation}
@@ -355,7 +355,7 @@ Using the logarithmic-barrier function yields:
 \label{eq:div-log-det-alpha}
 \end{equation}   
 $\divB{LD}^{1}$ and $\divB{LD}^{-1}$ are right- and left-sided Bregman divergences respectively.\\
-At $\alpha=0$, the log-det $\alpha$ divergence yields a symmetric divergence corresponding to the \emph{Bhattacharrya} divergence \cite{chebbi_means_2012, sra_positive_2016}. 
+At $\alpha=0$, the log-det $\alpha$ divergence yields a symmetric divergence corresponding to the \emph{Bhattacharrya} divergence \cite{chebbi_means_2012,sra_positive_2016}. 
 }
 
 %\subsubsection{log-det alpha divergence}
@@ -375,8 +375,8 @@ At $\alpha=0$, the log-det $\alpha$ divergence yields a symmetric divergence cor
 		\rule[-5pt]{0pt}{18pt} \\    
      \multicolumn{1}{|l|}{Affine-invariant} & $\distAIRM(\P_1, \P_2) = \lVert \log(\P_1^{-1}\P_2) \rVert_F$ & Algorithm 3 in \cite{fletcher_principal_2004}  & \cite{moakher_differential_2005,letcher_principal_2004} 
 		\rule[-5pt]{0pt}{18pt} \\	
-	\multicolumn{1}{|l|}{Kullback-Leibler} & $\divB{KL}(\P_1, \P_2) = \frac{1}{2} \log \frac{\det(\P_2)}{\det(\P_1)} + \tr(\P_2 \P_1) - \dc$ & Algorithm 1 in \cite{chebbi_means_2012} & \cite{chebbi_means_2012, kang_composite_2009} \rule[-5pt]{0pt}{18pt} \\
-	\multicolumn{1}{|l|}{S-divergence} & $\divB{S}(\P_1,\P_2) = \log \det(\frac{\P_1+\P_2}{2}) - \frac{1}{2}\log \det(\P_1 \P_2)$ &  Eq. (17-20) in \cite{cherian_efficient_2011} & \cite{sra_positive_2016, cherian_efficient_2011} \rule[-5pt]{0pt}{18pt} \\
+	\multicolumn{1}{|l|}{Kullback-Leibler} & $\divB{KL}(\P_1, \P_2) = \frac{1}{2} \log \frac{\det(\P_2)}{\det(\P_1)} + \tr(\P_2 \P_1) - \dc$ & Algorithm 1 in \cite{chebbi_means_2012} & \cite{chebbi_means_2012,kang_composite_2009} \rule[-5pt]{0pt}{18pt} \\
+	\multicolumn{1}{|l|}{S-divergence} & $\divB{S}(\P_1,\P_2) = \log \det(\frac{\P_1+\P_2}{2}) - \frac{1}{2}\log \det(\P_1 \P_2)$ &  Eq. (17-20) in \cite{cherian_efficient_2011} & \cite{sra_positive_2016,cherian_efficient_2011} \rule[-5pt]{0pt}{18pt} \\
     \multicolumn{1}{|l|}{$\alpha$-divergence} & $\divB{LD}^\alpha (\P_1, \P_2)$ from Eq.~\eqref{eq:div-log-det-alpha} & Algorithm 1 in \cite{chebbi_means_2012} & \cite{chebbi_means_2012} \rule[-5pt]{0pt}{18pt} \\ 
     \multicolumn{1}{|l|}{Bhattacharyya} & $\divB{B}(\P_1, \P_2)=\left( \log \frac{ \det \frac{1}{2} (\P_1+\P_2)}{(\det (\P_1)\det(\P_2))^{1/2}} \right)^{1/2}$ & Algorithm 1 in \cite{chebbi_means_2012} & \cite{nielsen_matrix_2012,chebbi_means_2012} \rule[-5pt]{0pt}{18pt} \\ 
     \multicolumn{1}{|l|}{Wasserstein} &  &  &  \rule[-5pt]{0pt}{18pt} \\ \hline
