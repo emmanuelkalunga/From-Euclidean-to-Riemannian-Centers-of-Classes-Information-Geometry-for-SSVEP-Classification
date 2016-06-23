@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: entropy.aux
+The style file: mdpi.bst
+Database file #1: entropy.bib
+Warning--string name "sep" is undefined
+--line 2616 of file entropy.bib
+Warning--string name "jul" is undefined
+--line 4181 of file entropy.bib
+Warning--I didn't find a database entry for "letcher_principal_2004"
+Warning--I didn't find a database entry for "barachant2013riemannian"
+You've used 28 entries,
+            2795 wiz_defined-function locations,
+            729 strings with 9806 characters,
+and the built_in function-call counts, 10857 in all, are:
+= -- 1002
+> -- 486
+< -- 25
++ -- 194
+- -- 138
+* -- 889
+:= -- 1670
+add.period$ -- 82
+call.type$ -- 28
+change.case$ -- 28
+chr.to.int$ -- 28
+cite$ -- 28
+duplicate$ -- 524
+empty$ -- 955
+format.name$ -- 186
+if$ -- 2328
+int.to.chr$ -- 1
+int.to.str$ -- 28
+missing$ -- 31
+newline$ -- 140
+num.names$ -- 84
+pop$ -- 183
+preamble$ -- 0
+purify$ -- 28
+quote$ -- 0
+skip$ -- 318
+stack$ -- 0
+substring$ -- 660
+swap$ -- 147
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 187
+warning$ -- 0
+while$ -- 107
+width$ -- 0
+write$ -- 343
+(There were 4 warnings)

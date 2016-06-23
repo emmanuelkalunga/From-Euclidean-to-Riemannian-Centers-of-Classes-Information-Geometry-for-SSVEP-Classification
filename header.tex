@@ -1,0 +1,144 @@
+\iflatexml
+% \documentclass[journal,article,submit,moreauthors,pdftex,10pt,a4paper]{mdpi} % Not (yet) supported by LaTeXML.
+\fi
+\usepackage[]{amsmath}
+\usepackage[]{amssymb}
+\usepackage[]{graphicx}
+\usepackage[]{subfigure}
+% \usepackage[]{tabto} % Not (yet) supported by LaTeXML.
+\usepackage[]{rotating}
+% \usepackage[]{algorithm} % Not (yet) supported by LaTeXML.
+% \usepackage[noend]{algpseudocode} % Not (yet) supported by LaTeXML.
+% \usepackage[]{adjustbox,lipsum} % Not (yet) supported by LaTeXML.
+% \usepackage[]{adjustbox,lipsum} % Not (yet) supported by LaTeXML.
+\usepackage[utf8]{inputenc}
+\usepackage[usenames, dvipsnames]{color}
+% \usepackage[]{enumitem} % Not (yet) supported by LaTeXML.
+\makeatletter
+\makeatother
+\newcommand{\ra}[1][]{\renewcommand{\arraystretch}{#1}}
+\newcommand{\X}[][]{\ensuremath{X}}
+\newcommand{\onlineX}[][]{\ensuremath{\chi}}
+\newcommand{\Y}[][]{\ensuremath{Y}}
+\newcommand{\totd}[][]{\ensuremath{{m}}}
+\newcommand{\chI}[][]{\ensuremath{c}}
+\newcommand{\dc}[][]{\ensuremath{C}}
+\newcommand{\si}[][]{\ensuremath{n}}
+\newcommand{\dt}[][]{\ensuremath{N}}
+\newcommand{\dr}[][]{\ensuremath{\mathcal{N}}}
+\newcommand{\nb}[][]{\ensuremath{i}}
+\newcommand{\Nb}[][]{\ensuremath{I}}
+\newcommand{\ci}[][]{\ensuremath{k}}
+\newcommand{\dK}[][]{\ensuremath{K}}
+\newcommand{\df}[][]{\ensuremath{f}}
+\newcommand{\dF}[][]{\ensuremath{F}}
+\newcommand{\ti}[][]{\ensuremath{i}}
+\newcommand{\dT}[][]{\ensuremath{I}}
+\newcommand{\setindex}[][]{\ensuremath{\mathcal{I}}}
+\newcommand{\dd}[][]{\ensuremath{D}}
+\newcommand{\tj}[][]{\ensuremath{j}}
+\newcommand{\Dindex}[][]{\ensuremath{\mathcal{J}}}
+\newcommand{\fpnorm}[][]{\ensuremath{p}}
+\newcommand{\cue}[][]{\ensuremath{\tau_0}}
+\newcommand{\deltaN}[][]{\ensuremath{\Delta \si}}
+\newcommand{\ws}[][]{\ensuremath{w}}
+\newcommand{\Xs}[1][]{\ensuremath{\X_{\operatorname{\text{#1}}}}}
+\newcommand{\Xsig}[][]{\ensuremath{\overrightarrow{\X}}}
+\newcommand{\GenMa}[][]{\ensuremath{\mathcal{M}}}
+\newcommand{\Ma}[][]{\ensuremath{\mathcal{M}_{\dc}}}
+\newcommand{\Sy}[][]{\ensuremath{\mathcal{S}_{\dc}}}
+\renewcommand{\P}[][]{\ensuremath{\Sigma}}
+\newcommand{\Pm}[][]{\ensuremath{\bar{\P}}}
+\newcommand{\PmE}[][]{\ensuremath{\bar{\P}_{\operatorname{E}}}}
+\newcommand{\PmLE}[][]{\ensuremath{\bar{\P}_{\operatorname{LE}}}}
+\newcommand{\PmAIRM}[][]{\ensuremath{\bar{\P}_{\operatorname{AI}}}}
+\newcommand{\PmB}[][]{\ensuremath{\bar{\P}_{\operatorname{B}}}}
+\newcommand{\PmAD}[][]{\ensuremath{\bar{\P}_{\alpha\operatorname{d}}}}
+\renewcommand{\S}[][]{\ensuremath{\Theta}}
+\newcommand{\ev}[][]{\ensuremath{\lambda}}
+\newcommand{\distF}[][]{\ensuremath{d_{\operatorname{E}}}}
+\newcommand{\distR}[][]{\ensuremath{\delta}}
+\newcommand{\distLE}[][]{\ensuremath{d_{\operatorname{LE}}}}
+\newcommand{\distAIRM}[][]{\ensuremath{d_{\operatorname{AI}}}}
+\newcommand{\distB}[][]{\ensuremath{d_{\operatorname{B}}}}
+\newcommand{\distAD}[][]{\ensuremath{d_{\alpha\operatorname{D}}}}
+\newcommand{\dist}[][]{\ensuremath{d}}
+\newcommand{\metric}[][]{\ensuremath{\mathit{d}}}
+\newcommand{\Rm}[][]{\ensuremath{\mu}}
+\newcommand{\EX}[][]{\ensuremath{\omega}}
+\newcommand{\tarco}[][]{\ensuremath{\Gamma}}
+\newcommand{\mle}[][]{\ensuremath{\hat{\ell}}}
+\newcommand{\fmle}[][]{\ensuremath{g}}
+\newcommand{\supertrial}[][]{\ensuremath{Z}}
+\newcommand{\pocc}[][]{\ensuremath{\rho}}
+\newcommand{\pthres}[][]{\ensuremath{\vartheta}}
+\newcommand{\clout}[][]{\ensuremath{\ci^*}}
+\newcommand{\cloutOn}[][]{\ensuremath{\tilde{\ci}}}
+\newcommand{\cloutmp}[][]{\ensuremath{\bar{\ci}}}
+\newcommand{\clarray}[][]{\ensuremath{\mathcal{K}}}
+\newcommand{\x}[][]{\ensuremath{x}}
+\newcommand{\xb}[][]{\ensuremath{\bar{x}}}
+\newcommand{\eye}[][]{\ensuremath{\mathbf{I}}}
+\newcommand{\unitary}[][]{\ensuremath{\mathbbm{1}}}
+\newcommand{\argmin}[][]{\arg\!\min}
+\renewcommand{\Re}[][]{\ensuremath{\mathbb{R}}}
+\newcommand{\Log}[1][]{\ensuremath{\operatorname{Log}_{#1}}}
+\newcommand{\Exp}[1][]{\ensuremath{\operatorname{Exp}_{#1}}}
+\newcommand{\Expm}[][]{\ensuremath{\operatorname{Exp}}}
+\newcommand{\Logm}[][]{\ensuremath{\operatorname{Log}}}
+\newcommand{\cov}[1][]{\ensuremath{\hat{\Sigma}_{\operatorname{#1}}}}
+\newcommand{\disvec}[][]{\ensuremath{\widetilde{\delta}}}
+\newcommand{\tr}[][]{\ensuremath{\operatorname{tr}}}
+\newcommand{\divB}[1][]{\ensuremath{D_{\operatorname{#1}}}}
+\newcommand{\changes}[1][]{\textcolor{red}{#1}}
+
+\setcounter{tocdepth}{3}
+\firstpage{1}
+\setcounter{page}{\@firstpage}
+% First macro on next line not (yet) supported by LaTeXML: 
+% \articlenumber{x}
+% First macro on next line not (yet) supported by LaTeXML: 
+% \doinum{10.3390/------}
+% First macro on next line not (yet) supported by LaTeXML: 
+% \pubvolume{xx}
+\pubyear{2016}
+% First macro on next line not (yet) supported by LaTeXML: 
+% \copyrightyear{2016}
+% First macro on next line not (yet) supported by LaTeXML: 
+% \externaleditor{Academic Editor: name}
+% First macro on next line not (yet) supported by LaTeXML: 
+% \history{Received: date; Accepted: date; Published: date}
+\theoremstyle{mdpi}
+ \newcounter{thm}
+ \setcounter{thm}{0}
+ \newcounter{ex}
+ \setcounter{ex}{0}
+ \newcounter{re}
+ \setcounter{re}{0}
+\newtheorem{Theorem}[thm]{Theorem}
+ \newtheorem{Lemma}[thm]{Lemma}
+ \newtheorem{Corollary}[thm]{Corollary}
+ \newtheorem{Proposition}[thm]{Proposition}
+\theoremstyle{mdpidefinition}
+ \newtheorem{Characterization}[thm]{Characterization}
+ \newtheorem{Property}[thm]{Property}
+ \newtheorem{Problem}[thm]{Problem}
+ \newtheorem{Example}[ex]{Example}
+ \newtheorem{ExamplesandDefinitions}[ex]{Examples and Definitions}
+ \newtheorem{Remark}[re]{Remark}
+ \newtheorem{Definition}[thm]{Definition}
+% First macro on next line not (yet) supported by LaTeXML: 
+% \Title{From Euclidean to Riemannian Centers of Classes: Information Geometry for SSVEP Classification }%$^\S$
+% First macro on next line not (yet) supported by LaTeXML: 
+% \Author{Emmanuel Kalunga $^{1,2}$*, Sylvain Chevallier $^{2}$, Quentin~Barth\'{e}lemy $^{3}$, Karim Djouani $^{1}$, Yskandar Hamamv$^{1}$ and Eric Monacelli $^{2,}$}
+% First macro on next line not (yet) supported by LaTeXML: 
+% \AuthorNames{Emmanuel Kalunga, Sylvain Chevallier, Quentin~Barth\'{e}lemy, Karim Djouani, Yskandar Hamam and Eric Monacelli}
+\address{%
+$^{1}$ \quad Department of Electrical Engineering/F'SATI Tshwane University of Technology, Pretoria 0001, South Africa\\
+$^{2}$ \quad Laboratoire d'Ing\'{e}nierie des Syst\`{e}mes de Versailles, Universit\'{e} de Versailles Saint-Quentin, 78140 Velizy, France\\
+$^{2}$ \quad Mensia Technologies, ICM, H\^{o}pital de la Piti\'{e}-Salp\^{e}tri\`{e}re, 75013 Paris, France\\}
+% First macro on next line not (yet) supported by LaTeXML: 
+% \corres{Correspondence: emmanuelkalunga.k@gmail.com}
+\keyword{Riemannian geometry; Divergences; Centroids; covariance matrices; EEG; SSVEP; BCI}
+% First macro on next line not (yet) supported by LaTeXML: 
+% \DeclareMathOperator*{\argmax}{arg\,max}

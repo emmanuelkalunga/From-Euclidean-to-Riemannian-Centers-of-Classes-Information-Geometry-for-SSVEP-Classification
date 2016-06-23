@@ -1,0 +1,41 @@
+\section{Introduction}
+
+Brain-Computer Interfaces (BCI) allow interaction with a computer or a machine without relying on the user's motor capabilities.
+In rehabilitation and assistive technologies, BCI offer promising solutions to compensate for physical disabilities.
+To record brain signals in BCI systems, the most common choice is to rely on electroencephalography (EEG)~\cite{niedermeyer_electroencephalography:_2005}, as the recording systems are smaller and less expansive than other brain imaging technologies (such as MEG or fMRI).
+BCI systems rely on different brain signals, such as event-related desynchronization or evoked potentials.
+The former is observed in the premotor cortex when the subject imagines moving some part of his own body (also known as Motor Imagery paradigm) and the latter qualifies the brain response to a specific sensory stimulation, usually visual or auditory.
+This contribution concentrates on Steady-State Visually Evoked Potentials (SSVEP), which are potentials emerging when a subject concentrates his attention on a stimulus blinking with a given frequency.
+Shortly after the user concentrates on this stimulus, brain waves in visual cortex could be observed with matching frequencies.
+To date, BCI still faces challenges and a major limitation is the EEG poor spatial resolution.
+This limitation is due to the volume conductance effect~\cite{niedermeyer_electroencephalography:_2005}, as the skull bones act as a non-linear low pass filter, mixing the brain source signals and thus reducing the signal-to-noise ratio.
+Consequently, spatial filtering methods have been developed or adopted, such as xDAWN~\cite{rivet_xdawn_2009} or Independent Component Analysis (ICA)~\cite{wang_enhancing_2006}.
+Spatial filters are very efficient on clean datasets obtained from strongly constrained environment but they are sensitive to artifacts and outliers~\cite{tomioka_logistic_2007}.
+Instead, approaches based on covariance matrices, such as CSP~\cite{johannes_designing_1999} and Canonical Correlation Analysis~\cite{kalunga_ssvep_2013} offer a much more robust framework.
+Covariance matrices being Symmetric and Positive-Definite (SPD), tools offered by Riemannian geometry have been recently explored with promising results.
+
+A classification technique referred to as \emph{minimum distance to Riemannian mean} (MDRM) has been recently introduced to EEG classification~\cite{barachant_multiclass_2012}. 
+It entirely relies on covariance matrices and the fact that they belong the manifold of SPD matrices.
+New EEG trials are assigned to the class whose average covariance matrix is the closest to the trial covariance matrix according to the affine-invariant Riemannian metric~\cite{moakher_differential_2005}.
+It is a simple, yet robust classification scheme outperforming complex and highly parametrized state-of-the-art classifiers. 
+The limitations of using Euclidean metrics in the computation of distances between SPD matrices and their means have been demonstrated \cite{arsigny_geometric_2007}. 
+Using information geometry, a number of Riemannian \changes{distances and divergences} have been developed and appropriately used on SPD matrices~\cite{amari_-divergence_2009,arsigny_geometric_2007}. %,ARS06
+The present work applies some of these distances to SSVEP data, providing a practical analysis and a comparison with Euclidean metrics.
+
+Moreover, %, despite the interesting contribution of information geometry on EEG covariance matrix classification, 
+most applications of Riemannian geometry to BCI are thus far focusing only on Motor Imagery (MI) paradigm.
+Riemannian BCI is well suited for MI experiment as the spatial information linked with synchronization are directly embedded in covariance matrices obtained from multichannel recordings.
+However, for BCI that rely on evoked potential such as SSVEP or event-related potential, as P300, frequency or temporal information are needed. %; the spatial covariance matrix does not contain these information. 
+In~\cite{congedo_new_2013}, the authors propose a rearrangement of the covariance matrices that embed the timing or the frequency information, thus allowing a direct application of the Riemannian framework.  
+This contribution relies on this rearrangement to apply MDRM on covariance matrices of SSVEP signals.
+The signals are recorded in an application of assistive robotics where an SSVEP-based BCI is used in tandem with a 3D touchless interface based on IR-sensors as a multimodal system to control an arm exoskeleton~\cite{kalunga_hybrid_2014}.
+
+\changes{
+The paper is organized as follows: Section~\ref{sec:classofcov} describes the framework for the classification of covariance matrices. 
+It first presents the basic principles of classification~\ref{subsec:fund_class}. 
+It then describes how means of covariance matrices are computed~\ref{subsec:mean}. 
+Since the notion of distance is key in the computation of the mean, a number of useful distances and divergences are subsequently presented~\ref{subsec:dist_div}. 
+Section~\ref{sec:classofcov} ends with the presentation of the MDM algorithm which is the classification method used in this work~\ref{subsec:mdm}. 
+In Section~\ref{sec:expresults}, the classification results obtained on real EEG dataset are presented and discussed.
+Section~\ref{sec:conclusion} concludes this paper.
+}
