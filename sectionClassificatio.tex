@@ -287,13 +287,13 @@ The Euclidean mean of SPD matrices correspond to their arithmetic mean \eqref{eq
 %- Shannon Entropy -> KL div (Nilson 2009)
 \\ \\ \textbf{Kullback-Leibler divergence} \\
 Using the \emph{Shannon entropy} $f(x) = \sum_\nb x_\nb \log x_\nb$ yields the \emph{Kullback-Leibler} divergence \cite{nielsen_sided_2009}.
-It is also known as the \emph{relative entropy} or \emph{discrimination information}.
-The Kullback-Leibler divergence of SPD matrices $\P_1, \P_2 \in \GenMa^C$ is given by:
+It is also known as the \emph{relative entropy} or \emph{discrimination information}. The Kullback-Leibler divergence of SPD matrices $\P_1, \P_2 \in \GenMa^C$ is given by:
 \begin{equation}
 \divB{KL}(\P_1, \P_2) = \frac{1}{2} \log \frac{\det(\P_2)}{\det(\P_1)} + \tr(\P_2 \P_1) - \dc
 \label{eq:div-kl}
 \end{equation}
 The mean of SPD matrices induced by the Kullback-Leibler divergence is calculated iteratively \cite{chebbi_means_2012}. 
+
 %- logarithmic barrier function -> Log det divergence (Dhillon 2007)
 \\ \\ \textbf{Log-det divergence} \\
 Another function often used in Bregman divergences of symmetric matrices is the \emph{logarithmic barrier} \cite{chebbi_means_2012,dhillon_matrix_2007,cherian_efficient_2011,sra_positive_2016}
@@ -461,7 +461,7 @@ For each subject, a test set is made of 32 trials while the remaining trials (wh
 \subsection{Results and Discussion}
 
 \changes{
-Discuss the invariance to right- and left-multiplication by positive matrices. It brings a significanc advantage over Euclidean metrics, in terms of electrode placement and unforseen displacement in electrodes position, and can even alleviate anatomical differences.
+Discuss the invariance to right- and left-multiplication by positive matrices. It brings a significant advantage over Euclidean metrics, in terms of electrode placement and unforseen displacement in electrodes position, and can even alleviate anatomical differences.
 }
 \begin{figure}[h!]
 \centering
@@ -502,7 +502,7 @@ The swelling effect of Arithmetic mean is shown in Fig.~\ref{fig:swel}: the dete
 \begin{tabular}{c|c|c|c|c|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \cline{2-21}
 & \multicolumn{6}{ c||}{Euclidean} & \multicolumn{14}{ c| }{Riemannian} \\ \cline{2-21}
-& \multicolumn{2}{ c|}{Arithmetic}& \multicolumn{2}{ c|}{Harmonic}& \multicolumn{2}{ c||}{Geometric}&\multicolumn{2}{c|}{Log-Euclidean}&\multicolumn{2}{c|}{Affine-invariant}&\multicolumn{2}{c|}{$\alpha$-divergence}&\multicolumn{2}{c|}{Bhattacharyya}&\multicolumn{2}{c|}{Kullbacl-Leibler}&\multicolumn{2}{c|}{S-divergence}&\multicolumn{2}{c|}{Wassestein} \\ \cline{1-21}
+& \multicolumn{2}{ c|}{Arithmetic}& \multicolumn{2}{ c|}{Harmonic}& \multicolumn{2}{ c||}{Geometric}&\multicolumn{2}{c|}{Log-Euclidean}&\multicolumn{2}{c|}{Affine-invariant}&\multicolumn{2}{c|}{$\alpha$-divergence}&\multicolumn{2}{c|}{Bhattacharyya}&\multicolumn{2}{c|}{Kullback-Leibler}&\multicolumn{2}{c|}{S-divergence}&\multicolumn{2}{c|}{Wassestein} \\ \cline{1-21}
 \multicolumn{1}{ |c| }{Sub.} & acc (\%) & time(s)& acc (\%) & time(s)& acc (\%) & time(s)& acc (\%) & time(s)& acc (\%) & time(s)& acc (\%) & time(s)& acc (\%) & time(s)& acc (\%) & time(s) & acc (\%) & time(s) & acc (\%) & time(s)\\ \hline
 \multicolumn{1}{ |c| }{1} & 53.12 & 0.025 & 48.44 & 0.015 & 00.00 & 0.000 & 71.88 & \textbf{0.150}& \textbf{73.44}& 0.194 & 			59.37 & 0.155 & 			68.75 & 			0.225 & 53.12 & 0.030 &  68.75  &  0.220  &  54.69  &  0.630\\ \hline
 \multicolumn{1}{ |c| }{2} & 43.75 & 0.020 & 31.25 & 0.025 & 00.00 & 0.000 & 78.13 & 		0.160 & 			79.69 & 0.190 &			79.69 & 0.200 & \textbf{81.25} & \textbf{0.065} & 54.69 & 0.045 & 81.25  &  0.255  &  54.69  &  0.285\\ \hline
