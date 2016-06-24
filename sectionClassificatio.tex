@@ -137,7 +137,7 @@ In \eqref{eq:mean}, this yields the arithmetic mean:
 The arithmetic mean is drown from a family of power means ($\P_{t|t = 1}$) [TODO: reference Lim2012]:
 
 \begin{equation}
-\P_t = \left( \frac{1}{\Nb}\sum_{\nb=1}^{\Nb} \P_\nb^t \right)^{\frac{1}{t}}, t \in [-1,+1].
+\P_t = \left( \frac{1}{\Nb}\sum_{\nb=1}^{\Nb} \P_\nb^t \right)^{\frac{1}{t}}, \ t \in [-1,+1].
 \label{eq:mean_power}
 \end{equation}
 From the same family can be drawn the \emph{geometric mean} ($\P_{t|t \rightarrow 0}$) and the \emph{harmonic mean} ($\P_{t|t = -1}$).
@@ -152,7 +152,7 @@ For these reasons, other means that adapt to the geometry of convex cone of SPD 
 } 
 \changes{
 
-ON DIRAIT QU'ICI, UN PARAGRAPHE A DISPARU
+ON DIRAIT QU'ICI, UN PARAGRAPHE A DISPARU !
 
 \[
  \metric_\P: T_\P\GenMa\times T_\P\GenMa \rightarrow \Re \]
@@ -213,6 +213,7 @@ f(\P_1, \P_2) = f(\P \P_1, \P \P_2) = f(\P_1 \P, \P_2 \P)
 \label{eq:invar_mult}
 \end{equation}
 }  
+
 \changes{    
 \subsubsection{Log-Euclidean}
 The Log-Euclidean is another distance that takes into consideration the topology of Riemannian manifolds. 
@@ -220,39 +221,39 @@ It was introduced by Arsigny et al. to alleviate the complexity involved in the 
 The mean associated to the Log-Euclidean distance corresponds to an arithmetic mean in the domain of matrix algorithm.  
 The distance between two SPD matrices is expressed as
 \begin{equation}
-\distLE(\P_1, \P_2) = \lVert \log(\P_1)-\log(\P_2) \rVert_F
+\distLE(\P_1, \P_2) = \lVert \log(\P_1)-\log(\P_2) \rVert_F ,
 \label{eq:dist_LE}
 \end{equation}
-Its associated mean is defined explicitly:
+and its associated mean is defined explicitly:
 \begin{equation}
-\PmLE = \exp \left(\sum_{\nb=1}^{\Nb} \log(\P_\nb) \right)
+\PmLE = \exp \left(\sum_{\nb=1}^{\Nb} \log(\P_\nb) \right) .
 \label{eq:mean_LE}
 \end{equation}
 Unlike the affine-invariant mean, the Log-Euclidean mean as a closed form expression which gives it a large computational advantage. 
 Moreover, the obtained mean is, to a large extent, similar to the affine-invariant mean:
 \begin{enumerate}[label=(\roman*)]
-\item They have the same determinants which correspond to the geometric mean of the determinants of their building matrices: \[ |\PmLE| = |\PmAIRM| = \prod_{\nb=1}^{\Nb} (|\P_\nb|)^{1/\Nb} = \exp(\frac{1}{\Nb}\sum_{\nb=1}^{\Nb}\log(|\P_\nb|)) \]
-\item They are often equal in value, if not, $\mathrm{trace}(\PmLE) > \mathrm{trace}(\PmAIRM)$
+\item they have the same determinants which correspond to the geometric mean of the determinants of their building matrices: \[ |\PmLE| = |\PmAIRM| = \prod_{\nb=1}^{\Nb} (|\P_\nb|)^{1/\Nb} = \exp(\frac{1}{\Nb}\sum_{\nb=1}^{\Nb}\log(|\P_\nb|)) \] ;
+\item they are often equal in value, if not, $\mathrm{trace}(\PmLE) > \mathrm{trace}(\PmAIRM)$ ;
 \item Log-Euclidean mean has properties close to affine-invariance (i.e. similarity-invariance instead of congruent-invariance).
 \end{enumerate}
 }
 \changes{
 \subsubsection{Bregman divergences}
-Divergences have been considered for the computation of mean in applications of clustering and classification of SPD matrices due to the fact that they induce a Riemannian metric biven by \eqref{eq:metric-riemann}. 
+Divergences have been considered for the computation of mean in applications of clustering and classification of SPD matrices due to the fact that they induce a Riemannian metric given by \eqref{eq:metric-riemann}. 
 Consider a strictly convex and differentiable function $f: \Re \rightarrow \Re$; then $f(x) \geq f(y) + f'(y)(x-y)$ and $f(x) = f(y) + f'(y)(x-y) \Leftrightarrow x = y$ for all $x,y \in \Re$.  
-The Bregman divergence, \citep[introducde by Bregman in][]{bregman_relaxation_1967} is the difference between the left and right sides of the inequality:
+The Bregman divergence, \citep[introduced by Bregman in][]{bregman_relaxation_1967} is the difference between the left and right sides of the inequality:
 \begin{equation}
 \divB{f}(x,y) = f(x)-f(y)-f'(y)(x-y).
 \label{eq:bregman-div}
 \end{equation} 
 $f$ is called a \emph{seed function}.
 It is shown that $\divB{f}$ verifies the non-negativity and the identity properties. When the seed function is quadratic, it can also be symmetric. 
-There is another set of properties that $\divB{f}$ verifies, they are reported in \cite{bregman_relaxation_1967}.
-Geometrically, the Bregman divergence can be seen as the measure of the difference between $f(x)$ and its representation on the plane tangent to $f$ at $y$ as illustrated in figure \ref{fig:bregman-projection}.
+There is another set of properties that $\divB{f}$ verifies, reported in \cite{bregman_relaxation_1967}.
+Geometrically, the Bregman divergence can be seen as the measure of the difference between $f(x)$ and its representation on the plane tangent to $f$ at $y$ as illustrated in Fig.~\ref{fig:bregman-projection}.
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=0.6\columnwidth]{Figures/bregman_projection}
-\caption{Geometry of the Bregman divergence with the seed function $f(z)=\frac{1}{2}z^\intercal z$. $h(z)$ is a hyperplane tangent to $f(z)$ at $y$. While it accuratly represent $f(y)$, it underestimate $f(x)$. The Bregman divergence measure how much the the representation of $f(x)$ on $h(z)$ \emph{diverges} from $f(x)$.}
+\caption{Geometry of the Bregman divergence with the seed function $f(z)=\frac{1}{2}z^\intercal z$. $h(z)$ is a hyperplane tangent to $f(z)$ at $y$. While it accurately represent $f(y)$, it underestimate $f(x)$. The Bregman divergence measure how much the representation of $f(x)$ on $h(z)$ \emph{diverges} from $f(x)$ (in green).}
 \label{fig:bregman-projection}
 \end{figure}
 }
@@ -268,10 +269,11 @@ For convenience, $f \circ \lambda$ will be referred to as $f(X)$ or $f(\P)$.
 }
 \changes{
 Depending on the seed function used, various divergences can be defined defined from the Bregman divergence.
+
 %- Squared Norm -> Euclidean divergence = Frobenious Norm (Dhillon 2007)
 \\ \\ \textbf{Euclidean divergence} \\
 The Frobenius norm is also a Bregman divergence in disguise. 
-It is obtained when the seed function  is the squared norm $f(x) = \frac{1}{2} \lVert x \rVert_2^2$ \cite{dhillon_matrix_2007}.
+It is obtained when the seed function  is the squared norm $f(x) = \frac{1}{2} \lVert x \rVert_2^2$ \cite{dhillon_matrix_2007}:
 \begin{equation}
 \divB{E}(\P_1, \P_2) = \lVert \P_1-\P_2 \rVert _F
 \label{eq:div-eucl}
@@ -281,6 +283,7 @@ The Euclidean mean of SPD matrices correspond to their arithmetic mean \eqref{eq
 %\PmE = \frac{1}{\Nb}\sum_{\nb=1}^{\Nb} \P_\nb
 %\label{eq:mean-eucl}
 %\end{equation} 
+
 %- Shannon Entropy -> KL div (Nilson 2009)
 \\ \\ \textbf{Kullback-Leibler divergence} \\
 Using the \emph{Shannon entropy} $f(x) = \sum_\nb x_\nb \log x_\nb$ yields the \emph{Kullback-Leibler} divergence \cite{nielsen_sided_2009}.
@@ -290,7 +293,7 @@ The Kullback-Leibler divergence of SPD matrices $\P_1, \P_2 \in \GenMa^C$ is giv
 \divB{KL}(\P_1, \P_2) = \frac{1}{2} \log \frac{\det(\P_2)}{\det(\P_1)} + \tr(\P_2 \P_1) - \dc
 \label{eq:div-kl}
 \end{equation}
-The mean of SPD matrices $\P_\nb \in \GenMa^C$ induced by the Kullback-Leibler divergence is calculated iteratively \cite{chebbi_means_2012}. 
+The mean of SPD matrices induced by the Kullback-Leibler divergence is calculated iteratively \cite{chebbi_means_2012}. 
 %- logarithmic barrier function -> Log det divergence (Dhillon 2007)
 \\ \\ \textbf{Log-det divergence} \\
 Another function often used in Bregman divergences of symmetric matrices is the \emph{logarithmic barrier} \cite{chebbi_means_2012,dhillon_matrix_2007,cherian_efficient_2011,sra_positive_2016}
@@ -301,14 +304,14 @@ The corresponding divergence is called the \emph{log-det} divergence and is give
 \label{eq:div-log-det}
 \end{equation}
 }
-
 \changes{
 The asymmetry of divergences result in the concept of right- and left-sided mean:
 \[ \divB{f}(\P_1,\P_2) \neq \divB{f}(\P_2,\P_1) \Rightarrow \argmin_{\P \in \Ma} \sum_{\nb=1}^{\Nb} \dist^2(\P_\nb,\P) \neq \argmin_{\P \in \Ma} \sum_{\nb=1}^{\Nb} \dist^2(\P, \P_\nb) \]
 It is usually sufficient to consider a single sided divergence. 
-In this work right sided-divergence and mean are used.
+In this work right-sided divergence and mean are used.
 In some cases however, the asymmetry can be undesirable. This has led to the symmetrization of some Bregman divergences.
-Often the symmetrization consist in an averaging of left- and right-sided divergence.
+Often the symmetrization consist in an averaging of left- and right-sided divergence [todo: reference].
+
 \\ \\ \textbf{S-divergence}\\
 An example of a symmetric divergence is the S-divergence. 
 It is obtained from the \emph{Jensen-Shannon} divergence which is a symmetrized Bregman divergence:
@@ -352,11 +355,11 @@ Using the logarithmic-barrier function yields:
 \begin{split}
 \divB{LD}^\alpha(\P_1,\P_2) &= \frac{4}{1-\alpha^2}\log \det \left(\frac{1-\alpha}{2}\left(\P_1 \P_2^{-1}\right)^{\frac{1+\alpha}{2}}+\frac{1+\alpha}{2}\left(\P_2 \P_1^{-1}\right)^{\frac{1-\alpha}{2}}\right), \quad -1 < \alpha < 1 \\
 \divB{LD}^{1}(\P_1,\P_2) &= \tr \left( \P_2^{-1}\P_1-\eye \right) - \log \det \left(\P_2^{-1}\P_1 \right)\\
-\divB{LD}^{-1}(\P_1,\P_2) &= \tr \left(\P_1^{-1}\P_2-\eye \right) - \log \det \left(\P_1^{-1}\P_2 \right)
+\divB{LD}^{-1}(\P_1,\P_2) &= \tr \left(\P_1^{-1}\P_2-\eye \right) - \log \det \left(\P_1^{-1}\P_2 \right) .
 \end{split}
 \label{eq:div-log-det-alpha}
 \end{equation}   
-$\divB{LD}^{1}$ and $\divB{LD}^{-1}$ are right- and left-sided Bregman divergences respectively.\\
+$\divB{LD}^{1}$ and $\divB{LD}^{-1}$ are right- and left-sided Bregman divergences respectively.
 At $\alpha=0$, the log-det $\alpha$ divergence yields a symmetric divergence corresponding to the \emph{Bhattacharrya} divergence \cite{chebbi_means_2012,sra_positive_2016}. 
 }
 
@@ -389,7 +392,7 @@ At $\alpha=0$, the log-det $\alpha$ divergence yields a symmetric divergence cor
 \subsection{Minimum Distance to Mean classifier for SSVEP}
 \label{subsec:mdm}
 \changes{The considered classifier is described in section \ref{subsec:fund_class}. 
-It is given the name \emph{Minimum Distance to Mean} or MDM}, and was inspired from~\cite{barachant_multiclass_2012} where it is limited to Riemannian mean.
+It is given the name \emph{Minimum Distance to Mean} or MDM, and was inspired from~\cite{barachant_multiclass_2012} where it is limited to Riemannian mean.
 %The considered classifier is referred to as Minimum Distance to Mean (MDM), and is inspired from~\cite{barachant_multiclass_2012} where it is limited to Riemannian mean. 
 Covariance matrices of EEG trials are classified based on their distance to the centers of the classes (i.e. means or centroids).
 To embed frequency information in the covariance matrices, we use a construction of matrices proposed in~\cite{congedo_new_2013}.
