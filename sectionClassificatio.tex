@@ -3,10 +3,10 @@
 
 \changes{
 
-\subsection{fundamentals of classification}
+\subsection{Fundamentals of classification}
 \label{subsec:fund_class}
 
-Given labelled samples $\x_i$ drown from two populations (positive and negative), a simple classification algorithm consists in assigning a previously unseen sample to the class with closer mean[ref: fig].
+Given labelled samples $\x_i$ drawn from two classes or populations (positive and negative), a simple classification algorithm consists in assigning a previously unseen sample to the class with closer mean[ref: fig].
 This implies a computation of means of classes and a measure of distances from the means. 
 Assuming that the samples are embedded into a dot product space (i.e. with Euclidean geometry), the means can be computed as:
 
@@ -19,13 +19,12 @@ c_{+} = \frac{1}{m_{+}} \sum_{ \left\lbrace i|y_i=+1 \right\rbrace } \x_i,
 c_{-} = \frac{1}{m_{-}} \sum_{ \left\lbrace i|y_i=-1 \right\rbrace } \x_i,
 \label{eq:mean_eucl2}
 \end{equation}
-where $y_i$ is the label of sample $\x_i$; $m_{+}$ and $m_{-}$ the number of positive and negative samples respectively. 
+where $y_i \in \left\lbrace +1, -1 \right\rbrace$ is the label of the training sample $\x_i$, $m_{+}$ and $m_{-}$ the number of positive and negative samples respectively. 
 An unseen sample $\x$ is unsigned to the class whose mean is the closest. 
-This simple geometric classification framework is the founding principle of more complex algorithms such as supporting vector machines. 
-It can be formulated in terms of the dot product $\left\langle \cdot, \cdot \right\rangle$:
-}
+This simple geometric classification framework is the founding principle of more complex algorithms such as supporting vector machines. }
 
 \changes{
+It can be formulated in terms of the dot product $\left\langle \cdot, \cdot \right\rangle$.
 If $c:=(c_{+}+c_{-})/2$ is the point lying halfway between $c_{+}$ and $c_{-}$, and $w:=c_{+}-c_{-}$ the vector connecting $c_{+}$ to $c_{-}$, the class of the unseen sample $\x$ is determined by checking whether the vector $\x-c$ connecting $c$ to $x$ makes an angle $\alpha < \pi/2$ with $w$ [ref: fig].   
 This is expressed as:
 
@@ -37,20 +36,21 @@ y &= \mathrm{sgn} \left\langle (\x-c),w \right\rangle \\
 \end{split}
 \label{eq:classif1}
 \end{equation}
+where $\mathrm{sgn}$ is the sign function.
 The offset $b$ vanishes if class means are equidistant to the origin \cite{scholkopf_learning_2001}.
-Inserting \eqref{eq:mean_eucl1} and \eqref{eq:mean_eucl2} in \eqref{eq:classif1} yields
+Inserting \eqref{eq:mean_eucl1} and \eqref{eq:mean_eucl2} in \eqref{eq:classif1} yields:
 
 \begin{equation}
-y = \mathrm{sgn} \left( \frac{1}{m_{+}} \sum_{ \left\lbrace i|y_i=+1 \right\rbrace } \left\langle \x,x_i \right\rangle - \frac{1}{m_{-}} \sum_{ \left\lbrace i|y_i=-1 \right\rbrace } \left\langle \x,\x_i \right\rangle + b \right)
+y = \mathrm{sgn} \left( \frac{1}{m_{+}} \sum_{ \left\lbrace i|y_i=+1 \right\rbrace } \left\langle \x,x_i \right\rangle - \frac{1}{m_{-}} \sum_{ \left\lbrace i|y_i=-1 \right\rbrace } \left\langle \x,\x_i \right\rangle + b \right) .
 \label{eq:classif2}
 \end{equation}
-Classifier \eqref{eq:classif2} can be generalized as
+Classifier \eqref{eq:classif2} can be generalized as:
 
 \begin{equation}
-y = \mathrm{sgn} \left( \sum_{i=1}^{m} y_i \alpha_i \dist(\x,\x_i) + b \right)
+y = \mathrm{sgn} \left( \sum_{i=1}^{m} y_i \alpha_i \dist(\x,\x_i) + b \right) ,
 \label{eq:classif_gen}
 \end{equation}
-where $\alpha_i$ is the weight of sample $x_i$ and $\dist(\cdot, \cdot)$ a distance, a divergence of a kernel. 
+where $\alpha_i$ is the weight of the training sample $x_i$ and $\dist(\cdot, \cdot)$ a distance, a divergence of a kernel. 
 In the case of two classes in the dot product space where all samples have the same weight, $y_i \in \left\lbrace +1, -1 \right\rbrace$, $\alpha = 1/m$ and $\dist(\cdot, \cdot) = \left\langle \cdot, \cdot \right\rangle$. 
 }
 
@@ -79,10 +79,10 @@ The properties of SPD matrices constrain them to a convex cone:
 
 \begin{enumerate}
 [label=(\roman*)]
-\item Symmetry: $\P = \P^\intercal$
-\item Positive definiteness: $\x^\intercal \P \x > 0, \forall x \in \Re^{\dc} \backslash 0$
-\item Strict positivity of diagonal element: $\P_{ij} > 0 | i=j, \forall i,j \in \left\lbrace 1, \dots, \dc \right\rbrace$ i.e. positive variance.
-\item Cauchy-Schwarz inequalities: $|\P_{ij}| \leq (\P_{ii} \P_{jj})^{1/2}, \forall i,j \in \left\lbrace 1, \dots, \dc \right\rbrace$
+\item Symmetry: \tab $\P = \P^\intercal$ ,
+\item Positive definiteness: \tab $\x^\intercal \P \x > 0, \forall x \in \Re^{\dc} \backslash 0$ ,
+\item Strict positivity of diagonal element: \tab $\P(i,j) > 0 | i=j, \forall i,j \in \left\lbrace 1, \dots, \dc \right\rbrace$ i.e. positive variance ,
+\item Cauchy-Schwarz inequalities: \tab $|\P_{ij}| \leq (\P_{ii} \P_{jj})^{1/2}, \forall i,j \in \left\lbrace 1, \dots, \dc \right\rbrace$ .
 \end{enumerate}
 }
 
