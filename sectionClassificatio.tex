@@ -152,19 +152,22 @@ For these reasons, other means that adapt to the geometry of convex cone of SPD 
 } 
 \changes{
 
+ON DIRAIT QU'ICI, UN PARAGRAPHE A DISPARU
+
 \[
  \metric_\P: T_\P\GenMa\times T_\P\GenMa \rightarrow \Re \]
 $\metric$ is a function that assigns, for each point $\P \in \GenMa$, an inner product in the tangent space $T_\P\GenMa$  .
 The Riemannian metric allows us to compute the length of vectors or distance between two point on the tangent space, and through appropriate mapping \cite{pennec_riemannian_2006}, the length of the corresponding \emph{geodesic} (i.e. the shortest curve connecting two point) on the manifold $\GenMa$.
-The \emph{affine invariant distance} is the distance between two point of a Riemannian  manifold endowed with an invariant Riemannian metric 
+The \emph{affine-invariant distance} is the distance between two points of a Riemannian  manifold endowed with an invariant Riemannian metric:
 \begin{equation}
 \begin{split}
 g_{\P}(\S_1, \S_2) & = \left\langle \S_1|\S_2 \right\rangle_\P \\
  & = \left\langle  \P^{-\frac{1}{2}} \S_1  \P^{-\frac{1}{2}} |  \P^{-\frac{1}{2}} \S_2  \P^{-\frac{1}{2}} \right\rangle_\eye\\
- & = \mathrm{trace} \left( \P^{-\frac{1}{2}} \S_1 \P^{-1} \S_2 \P^{-\frac{1}{2}} \right)
+ & = \mathrm{trace} \left( \P^{-\frac{1}{2}} \S_1 \P^{-1} \S_2 \P^{-\frac{1}{2}} \right) ,
 \end{split}
 \label{eq:metric-riemann}
 \end{equation}
+where $\eye$ is the identity matrix. 
 The inner product of the tangent vectors $\S_1$ and $\S_2$ at $\P$ is invariant by the action of $\P^{-\frac{1}{2}}$ transformation.
 The affine-invariant Riemannian distance is defined as:
 \begin{equation}
@@ -186,8 +189,7 @@ It has no close form solution and can be solved iteratively through a gradient d
 
 \changes{
 These distance and mean are invariant to affine transformations. 
-Some of these invariances are particularly important to preserve the geometric topology of the Riemannian manifold of SDP matrices: 
-Let $f$ be an affine invariant function defined on $\GenMa$ (e.g. distance or mean),
+Some of these invariances are particularly important to preserve the geometric topology of the Riemannian manifold of SDP matrices. Let $f$ be an affine-invariant function defined on $\GenMa$ (e.g. distance or mean),
 \begin{enumerate}[label=(\roman*)]
 \item \emph{Invariance under congruent transformation}
 \begin{equation}
@@ -199,7 +201,7 @@ f(\P_1, \P_2) = f(\P \P_1 \P^\intercal, \P \P_2 \P^\intercal)
 f(\P,\eye) = f(\P^{-1},\eye)
 \label{eq:invar_invers}
 \end{equation}
-where $\eye$ is the identity matrix. This implies that
+implying
 \begin{equation}
 f(\P_1,\P_2) = f(\P_1^{-1},\P_2^{-1})
 \label{eq:invar_invers2}
