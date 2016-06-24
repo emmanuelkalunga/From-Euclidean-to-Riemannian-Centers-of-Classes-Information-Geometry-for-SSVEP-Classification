@@ -11,7 +11,7 @@ To date, BCI still faces challenges and a major limitation is the EEG poor spati
 This limitation is due to the volume conductance effect~\cite{niedermeyer_electroencephalography:_2005}, as the skull bones act as a non-linear low pass filter, mixing the brain source signals and thus reducing the signal-to-noise ratio.
 Consequently, spatial filtering methods have been developed or adopted, such as xDAWN~\cite{rivet_xdawn_2009} or Independent Component Analysis (ICA)~\cite{wang_enhancing_2006}.
 Spatial filters are very efficient on clean datasets obtained from strongly constrained environment but they are sensitive to artifacts and outliers~\cite{tomioka_logistic_2007}.
-Instead, approaches based on covariance matrices, such as CSP~\cite{johannes_designing_1999} and Canonical Correlation Analysis~\cite{kalunga_ssvep_2013} offer a much more robust framework.
+Instead, approaches based on covariance matrices, such as Common Spatial Pattern (CSP)~\cite{johannes_designing_1999} and Canonical Correlation Analysis~\cite{kalunga_ssvep_2013} offer a much more robust framework.
 Covariance matrices being Symmetric and Positive-Definite (SPD), tools offered by Riemannian geometry have been recently explored with promising results.
 
 A classification technique referred to as \emph{minimum distance to Riemannian mean} (MDRM) has been recently introduced to EEG classification~\cite{barachant_multiclass_2012}. 
