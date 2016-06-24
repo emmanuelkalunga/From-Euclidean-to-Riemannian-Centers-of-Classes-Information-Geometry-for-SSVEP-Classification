@@ -69,12 +69,12 @@ In this work, samples are represented by their covariance matrices. Therefore me
 \label{subsec:mean}
 
 \changes{
-Consider a multivariate variable $\X \in \Re^{\dc \times \dt}$ where $\dc$ is the number of variables and $\dt$ the number of samples, with $C > N $, the covariance matrix of $\X$ which can be estimated as
+Consider a multivariate variable $\X \in \Re^{\dc \times \dt}$ where $\dc$ is the number of variables and $\dt$ the number of samples, with $C > N $, the covariance matrix of the centered variable $\X$ can be estimated as:
 
 \begin{equation}
 \cov{} = \frac{1}{\dt} \X \X^\intercal
 \end{equation}
-is symmetric positive definite (SPD).
+and is symmetric positive definite (SPD).
 The properties of SPD matrices constrain them to a convex cone:
 
 \begin{enumerate}
