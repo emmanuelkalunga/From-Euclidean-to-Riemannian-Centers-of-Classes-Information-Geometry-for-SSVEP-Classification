@@ -317,7 +317,7 @@ An example of a symmetric divergence is the S-divergence.
 It is obtained from the \emph{Jensen-Shannon} divergence which is a symmetrized Bregman divergence:
 \begin{equation}
 \begin{split}
-\divB{J-S}(\P_1, \P_2) & = \frac{1}{2} \left( \divB{f}(\P_1,\frac{\P_1+\P_2}{2}) + \divB(\frac{\P_1+\P_2}{2},\P_2) \right) \\
+\divB{J-S}(\P_1, \P_2) & = \frac{1}{2} \left( \divB{f}(\P_1,\frac{\P_1+\P_2}{2}) + \divB{f}(\frac{\P_1+\P_2}{2},\P_2) \right) \\
  & = \frac{1}{2} \left( \tr f(\P_1) + \tr f(\P_2) \right) - \tr f(\frac{\P_1+\P_2}{2})
 \end{split} 
 \label{eq:div-js}
