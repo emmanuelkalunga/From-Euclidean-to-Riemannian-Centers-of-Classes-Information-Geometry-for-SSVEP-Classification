@@ -97,7 +97,7 @@ the center of mass $\Pm$ of the set, is a covariance matrix that minimizes the s
 \end{equation}
 where $\dist(\cdot,\cdot)$ is a measure of distance between two matrices. \changes{Practically, $\dist(\cdot,\cdot)$ can either be a distance or a divergence.}
 \changes{
-In the literature, this  mean is at times designated as the \emph{Frechet mean}, \emph{Cartan mean}, or \emph{Karcher mean} \footnote{This appellations have been recently criticized by Karcher himself \cite{karcher_riemannian_2014}} \cite{lim_matrix_2012}.
+In the literature, this  mean is at times designated as the \emph{Frechet mean}, \emph{Cartan mean}, or \emph{Karcher mean} \footnote{This appellation has been recently criticized by Karcher himself \cite{karcher_riemannian_2014}} \cite{lim_matrix_2012}.
 Cartan \cite{cartan_groupes_1929} had shown that a unique solution to \eqref{eq:mean} exists if all $\P_\nb$ lie in a convex ball \citep[section 16 of][]{cartan_groupes_1929}. This applies also to closed convex cones.}
 
 \changes{Depending on the divergence or distance used, several means can be defined from \eqref{eq:mean}. Those considered in this study are presented in the next lines and summarized in Table~\ref{tab:dist}.}
@@ -111,10 +111,10 @@ A distance function $\dist:\GenMa \times \GenMa \rightarrow \Re^+$ has the follo
 
 \begin{enumerate}
 [label=(\roman*)]
-\item Non-negativity: \tab $\dist(\P_1, \P_2) \geq 0$
-\item Identity: \tab $\dist(\P_1, \P_2) = 0 \ \mathrm{iff} \ \P_1 = \P_2$
-\item Symmetry: \tab $\dist(\P_1, \P_2) = \dist(\P_2, \P_1)$
-\item Triangular inequality:  \tab $\dist(\P_1, \P_3) \leq \dist(\P_1, \P_2) + \dist(\P_2, \P_3)$
+\item Non-negativity: \tab $\dist(\P_1, \P_2) \geq 0$ ,
+\item Identity: \tab $\dist(\P_1, \P_2) = 0 \ \ \mathrm{iff} \ \ \P_1 = \P_2$ ,
+\item Symmetry: \tab $\dist(\P_1, \P_2) = \dist(\P_2, \P_1)$ ,
+\item Triangular inequality:  \tab $\dist(\P_1, \P_3) \leq \dist(\P_1, \P_2) + \dist(\P_2, \P_3)$ .
 \end{enumerate}
 Divergences are very similar to distances with the difference that properties (iii) and (iv) do not have to be satisfied. 
 In the context of covariance matrices, divergences and distances should both induce a Riemannian metric on the manifold of SPD matrices. 
@@ -134,20 +134,20 @@ In \eqref{eq:mean}, this yields the arithmetic mean:
 \PmE = \frac{1}{\Nb}\sum_{\nb=1}^{\Nb} \P_\nb
 \label{eq:mean_arithmetic}
 \end{equation}
-The arithmetic mean is drown from a family of power means ($\P_{t|t = 1}$)
+The arithmetic mean is drown from a family of power means ($\P_{t|t = 1}$) [TODO: reference Lim2012]:
 
 \begin{equation}
 \P_t = \left( \frac{1}{\Nb}\sum_{\nb=1}^{\Nb} \P_\nb^t \right)^{\frac{1}{t}}, t \in [-1,+1].
 \label{eq:mean_power}
 \end{equation}
-From the same family can be drown the \emph{geometric mean} ($\P_{t|t \rightarrow 0}$) and the \emph{harmonic mean} ($\P_{t|t = -1}$).
+From the same family can be drawn the \emph{geometric mean} ($\P_{t|t \rightarrow 0}$) and the \emph{harmonic mean} ($\P_{t|t = -1}$).
 }
 \changes{
 We consider the arithmetic mean $\PmE$, as a baseline. 
-This averaging of covariance is usually not adequate in the space of SPD matrices for 2 main reasons. 
-First the Euclidean distance and averaging do not grantee invariance under inversion: a matrix and its inverse are supposed to be at the same distance from the identity matrix. 
-Secondly the Euclidean averaging of covariance SPD leads to a \emph{swelling effect}: the determinant of the arithmetic mean of SPD matrices can be larger than the determinant of its individual components.
-And since the determinant of a covariance matrice is a direct measure of the dispersion of the multivariate variable, the swelling effect introduces a large distortion of the data dispersion \cite{arsigny_geometric_2007}.
+This averaging of covariance is usually not adequate in the space of SPD matrices for two main reasons. 
+Firstly, the Euclidean distance and averaging do not grantee invariance under inversion: a matrix and its inverse are supposed to be at the same distance from the identity matrix. 
+Secondly, the Euclidean averaging of covariance SPD leads to a \emph{swelling effect}: the determinant of the arithmetic mean of SPD matrices can be larger than the determinant of its individual components.
+And since the determinant of a covariance matrix is a direct measure of the dispersion of the multivariate variable, the swelling effect introduces a large distortion of the data dispersion \cite{arsigny_geometric_2007}.
 For these reasons, other means that adapt to the geometry of convex cone of SPD matrices are used. 
 } 
 \changes{
