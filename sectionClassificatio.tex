@@ -581,15 +581,3 @@ For all other values of alpha, the expected accuracy is 78.85$\pm$3.3\% and one 
 
 This experiment on real EEG data shows that it is crucial to process covariance matrices with dedicated Riemannian tools, impacting the efficiency of the classification. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Conclusion}
-\label{sec:conclusion}
-
-Riemannian approaches have been successfully applied on EEG signals for brain computer interfaces. 
-Straightforward algorithms, such as Minimum Distance to Mean, provide competitive results with state-of-the-art methods, without requiring meticulous parametrization or optimization.
-Working on covariance matrices in Riemannian spaces offers a wide choice of distances, embedding desirable invariances: it is thus possible to avoid the computation of user-specific spatial filters which are sensitive to artifacts and outliers.
-Nonetheless, the estimation of the Riemannian geometric mean has a strong impact on the classifier accuracy.
-This study investigates the performance of several distances and divergence on a real EEG dataset in the context of BCI based on the SSVEP paradigm.
-The experimental results indicate that the $\alpha$-divergence yields the best accuracy after the selection of the best $\alpha$ values, but the Bhattacharyya distance has the lowest computational cost while providing honorable accuracies.
-
