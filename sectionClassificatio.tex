@@ -7,7 +7,7 @@
 \label{subsec:fund_class}
 
 Given labelled samples $\x_i$ drawn from two classes or populations (positive and negative), a simple classification algorithm consists in assigning a previously unseen sample to the class with closer mean[ref: fig].
-This implies a computation of means of classes and a measure of distances from the means. 
+This implies a computation of means of class and a measure of distances from the means. 
 Assuming that the samples are embedded into a dot product space (i.e. with Euclidean geometry), the means can be computed as:
 
 \begin{equation}
@@ -106,7 +106,7 @@ Cartan \cite{cartan_groupes_1929} had shown that a unique solution to \eqref{eq:
 
 \subsubsection{Distance and divergence}
 Divergences and distances are measures of dissimilarity between two points in a space.
-Here the Riemannian space will be considered.
+Here a Riemannian space $\GenMa$ will be considered.
 A distance function $\dist:\GenMa \times \GenMa \rightarrow \Re^+$ has the following properties for all $\P_1, \P_2,\P_3 \in \GenMa$:
 
 \begin{enumerate}
@@ -145,7 +145,7 @@ From the same family can be drawn the \emph{geometric mean} ($\P_{t|t \rightarro
 \changes{
 We consider the arithmetic mean $\PmE$, as a baseline. 
 This averaging of covariance is usually not adequate in the space of SPD matrices for two main reasons. 
-Firstly, the Euclidean distance and averaging do not grantee invariance under inversion: a matrix and its inverse are supposed to be at the same distance from the identity matrix. 
+Firstly, the Euclidean distance and averaging do not guarantee invariance under inversion: a matrix and its inverse are supposed to be at the same distance from the identity matrix. 
 Secondly, the Euclidean averaging of covariance SPD leads to a \emph{swelling effect}: the determinant of the arithmetic mean of SPD matrices can be larger than the determinant of its individual components.
 And since the determinant of a covariance matrix is a direct measure of the dispersion of the multivariate variable, the swelling effect introduces a large distortion of the data dispersion \cite{arsigny_geometric_2007}.
 For these reasons, other means that adapt to the geometry of convex cone of SPD matrices are used. 
