@@ -74,7 +74,11 @@ Consider a multivariate variable $\X \in \Re^{\dc \times \dt}$ where $\dc$ is th
 \begin{equation}
 \P = \frac{1}{\dt} \X \X^\intercal
 \end{equation}
-and is symmetric positive definite (SPD).
+and is symmetric positive definite (SPD): $\P \in \Ma$, a manifold of $\dc\times\dc$ symmetric positive definite matrices,
+\begin{equation*}
+	\label{eq:rm}
+  \Ma = \left\{ \P \in  \Re^{\dc\times\dc} : \P = \P^\intercal \text{ and } x^\intercal \P x > 0, \forall x \in \Re^{\dc} \backslash 0 \right\} \ . %\nonumber
+\end{equation*}
 The properties of SPD matrices constrain them to a convex cone:
 
 \begin{enumerate}
