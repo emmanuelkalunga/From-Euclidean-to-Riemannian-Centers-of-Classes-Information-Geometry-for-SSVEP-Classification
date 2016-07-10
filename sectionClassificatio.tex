@@ -51,7 +51,7 @@ y = \mathrm{sgn} \left( \sum_{i=1}^{m} y_i \alpha_i \dist(\x,\x_i) + b \right) ,
 \label{eq:classif_gen}
 \end{equation}
 where $\alpha_i$ is the weight of the training sample $x_i$ and $\dist(\cdot, \cdot)$ a distance, a divergence of a kernel. 
-In the case of two classes in the dot product space where all samples have the same weight, $y_i \in \left\lbrace +1, -1 \right\rbrace$, $\alpha = 1/m$ and $\dist(\cdot, \cdot) = \left\langle \cdot, \cdot \right\rangle$. 
+In the case of two classes, with $m$ samples ($m = m_{+} + m_{-}$) in the dot product space where all samples have the same weight, $y_i \in \left\lbrace +1, -1 \right\rbrace$, $\alpha_i = 1/m$ and $\dist(\cdot, \cdot) = \left\langle \cdot, \cdot \right\rangle$. 
 }
 
 \changes{
