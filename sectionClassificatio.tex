@@ -166,11 +166,11 @@ This inner product varies smoothly from point to point on the manifold,
  \metric_\P: T_\P\GenMa\times T_\P\GenMa \rightarrow \Re \]
 $\metric$ is a function that assigns, for each point $\P \in \GenMa$, an inner product in the tangent space $T_\P\GenMa$  .
 The Riemannian metric allows us to compute the length of vectors or distance between two point on the tangent space, and through appropriate mapping \cite{pennec_riemannian_2006}, the length of the corresponding \emph{geodesic} (i.e. the shortest curve connecting two point) on the manifold $\GenMa$.
-The \emph{affine-invariant distance} is the distance between two points of a Riemannian  manifold endowed with an invariant Riemannian metric:
+The \emph{affine-invariant distance} is the distance between two points of a Riemannian  manifold endowed with an invariant Riemannian metric $g_{\P}$ defined at $\P$:
 \begin{equation}
 \begin{split}
-g_{\P}(\S_1, \S_2) & = \left\langle \S_1|\S_2 \right\rangle_\P \\
- & = \left\langle  \P^{-\frac{1}{2}} \S_1  \P^{-\frac{1}{2}} |  \P^{-\frac{1}{2}} \S_2  \P^{-\frac{1}{2}} \right\rangle_\eye\\
+g_{\P}(\S_1, \S_2) & = \left\langle \S_1 , \S_2 \right\rangle_\P \\
+ & = \left\langle  \P^{-\frac{1}{2}} \S_1  \P^{-\frac{1}{2}} ,  \P^{-\frac{1}{2}} \S_2  \P^{-\frac{1}{2}} \right\rangle_\eye\\
  & = \mathrm{trace} \left( \P^{-\frac{1}{2}} \S_1 \P^{-1} \S_2 \P^{-\frac{1}{2}} \right) ,
 \end{split}
 \label{eq:metric-riemann}
