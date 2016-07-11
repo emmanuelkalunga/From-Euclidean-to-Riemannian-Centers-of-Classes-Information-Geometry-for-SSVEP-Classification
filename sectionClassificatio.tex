@@ -1,14 +1,15 @@
 \section{Classification of covariance matrices for SSVEP}
 \label{sec:classofcov}
 
-\iflatexml\else \changes{ \fi
 
 \subsection{Fundamentals of classification}
 \label{subsec:fund_class}
 
+\iflatexml\else \changes{ \fi
 Given labelled samples $\x_i$ drawn from two classes or populations (positive and negative), a simple classification algorithm consists in assigning a previously unseen sample to the class with closer mean[ref: fig].
 This implies a computation of means of class and a measure of distances from the means. 
 Assuming that the samples are embedded into a dot product space (i.e. with Euclidean geometry), the means can be computed as:
+\iflatexml\else } \fi
 
 \begin{equation}
 c_{+} = \frac{1}{m_{+}} \sum_{ \left\lbrace i|y_i=+1 \right\rbrace } \x_i,
@@ -19,6 +20,7 @@ c_{+} = \frac{1}{m_{+}} \sum_{ \left\lbrace i|y_i=+1 \right\rbrace } \x_i,
 c_{-} = \frac{1}{m_{-}} \sum_{ \left\lbrace i|y_i=-1 \right\rbrace } \x_i,
 \label{eq:mean_eucl2}
 \end{equation}
+\iflatexml\else \changes{ \fi
 where $y_i \in \left\lbrace +1, -1 \right\rbrace$ is the label of the training sample $\x_i$, $m_{+}$ and $m_{-}$ the number of positive and negative samples respectively. 
 An unseen sample $\x$ is unsigned to the class whose mean is the closest. 
 This simple geometric classification framework is the founding principle of more complex algorithms such as supporting vector machines. 
@@ -28,6 +30,7 @@ This simple geometric classification framework is the founding principle of more
 It can be formulated in terms of the dot product $\left\langle \cdot, \cdot \right\rangle$.
 If $c:=(c_{+}+c_{-})/2$ is the point lying halfway between $c_{+}$ and $c_{-}$, and $w:=c_{+}-c_{-}$ the vector connecting $c_{+}$ to $c_{-}$, the class $y$ of the unseen sample $\x$ is determined by checking whether the vector $\x-c$ connecting $c$ to $x$ makes an angle $\alpha < \pi/2$ with $w$ [ref: fig].   
 This is expressed as:
+\iflatexml\else } \fi
 
 \begin{equation}
 \begin{split}
@@ -37,20 +40,26 @@ y &= \mathrm{sgn} \left\langle (\x-c),w \right\rangle \\
 \end{split}
 \label{eq:classif1}
 \end{equation}
+\iflatexml\else \changes{ \fi
 where $\mathrm{sgn}$ is the sign function.
 The offset $b$ vanishes if class means are equidistant to the origin \cite{scholkopf_learning_2001}.
 Inserting \eqref{eq:mean_eucl1} and \eqref{eq:mean_eucl2} in \eqref{eq:classif1} yields:
+\iflatexml\else } \fi
 
 \begin{equation}
 y = \mathrm{sgn} \left( \frac{1}{m_{+}} \sum_{ \left\lbrace i|y_i=+1 \right\rbrace } \left\langle \x,x_i \right\rangle - \frac{1}{m_{-}} \sum_{ \left\lbrace i|y_i=-1 \right\rbrace } \left\langle \x,\x_i \right\rangle + b \right) .
 \label{eq:classif2}
 \end{equation}
+
+\iflatexml\else \changes{ \fi
 Classifier \eqref{eq:classif2} can be generalized as:
+\iflatexml\else } \fi
 
 \begin{equation}
 y = \mathrm{sgn} \left( \sum_{i=1}^{m} y_i \alpha_i \dist(\x,\x_i) + b \right) ,
 \label{eq:classif_gen}
 \end{equation}
+\iflatexml\else \changes{ \fi
 where $\alpha_i$ is the weight of the training sample $x_i$ and $\dist(\cdot, \cdot)$ a distance, a divergence of a kernel. 
 In the case of two classes, with $m$ samples ($m = m_{+} + m_{-}$) in the dot product space where all samples have the same weight, $y_i \in \left\lbrace +1, -1 \right\rbrace$, $\alpha_i = 1/m$ and $\dist(\cdot, \cdot) = \left\langle \cdot, \cdot \right\rangle$. 
 \iflatexml\else } \fi
@@ -71,11 +80,14 @@ In this work, samples are represented by their covariance matrices. Therefore me
 
 \iflatexml\else \changes{ \fi
 Consider a multivariate variable $\X \in \Re^{\dc \times \dt}$ where $\dc$ is the number of variables and $\dt$ the number of samples, with $C > N $, the covariance matrix of the centered variable $\X$ can be estimated as:
+\iflatexml\else } \fi
 
 \begin{equation}
 \P = \frac{1}{\dt} \X \X^\intercal
 \end{equation}
+\iflatexml\else \changes{ \fi
 and is symmetric positive definite (SPD): $\P \in \Ma$, a manifold of $\dc\times\dc$ symmetric positive definite matrices,
+\iflatexml\else } \fi
 \begin{equation*}
 	\label{eq:rm}
   \Ma = \left\{ \P \in  \Re^{\dc\times\dc} : \P = \P^\intercal \text{ and } x^\intercal \P x > 0, \forall x \in \Re^{\dc} \backslash 0 \right\} \ . %\nonumber
@@ -89,12 +101,13 @@ The properties of SPD matrices constrain them to a convex cone:
 \item Strict positivity of diagonal element: \tab $\P(i,j) > 0 | i=j, \forall i,j \in \left\lbrace 1, \dots, \dc \right\rbrace$ i.e. positive variance ,
 \item Cauchy-Schwarz inequalities: \tab $|\P(i,j)| \leq (\P(i,i) \P(j,j))^{1/2}, \forall i,j \in \left\lbrace 1, \dots, \dc \right\rbrace$ .
 \end{enumerate}
-\iflatexml\else } \fi
+
 
 \iflatexml\else \changes{ \fi
 The mean of SPD matrices can be computed as a center of mass modeled on Euclidean geometry:}
 given a set of covariance matrices $\{\P_\nb\}_{\nb=1,\dots,\Nb}$,
 the center of mass $\Pm$ of the set, is a covariance matrix that minimizes the sum of the squared distances to matrices $\P_\nb$:
+\iflatexml\else } \fi
 
 \begin{equation}
 	\label{eq:mean}
@@ -104,6 +117,7 @@ where $\dist(\cdot,\cdot)$ is a measure of distance between two matrices.
 \iflatexml\else \changes{ \fi
 Practically, $\dist(\cdot,\cdot)$ can either be a distance or a divergence.
 \iflatexml\else } \fi
+
 \iflatexml\else \changes{ \fi
 In the literature, this  mean is at times designated as the \emph{Frechet mean}, \emph{Cartan mean}, or \emph{Karcher mean} \footnote{This appellation has been recently criticized by Karcher himself \cite{karcher_riemannian_2014}} \cite{lim_matrix_2012}.
 Cartan \cite{cartan_groupes_1929} had shown that a unique solution to \eqref{eq:mean} exists if all $\P_\nb$ lie in a convex ball \citep[section 16 of][]{cartan_groupes_1929}. This applies also to closed convex cones.
@@ -113,12 +127,13 @@ Cartan \cite{cartan_groupes_1929} had shown that a unique solution to \eqref{eq:
 Depending on the divergence or distance used, several means can be defined from \eqref{eq:mean}. Those considered in this study are presented in the next lines and summarized in Table~\ref{tab:dist}.
 \iflatexml\else } \fi
 
-\iflatexml\else \changes{ \fi
 
 \subsubsection{Distance and divergence}
+\iflatexml\else \changes{ \fi
 Divergences and distances are measures of dissimilarity between two points in a space.
 Here a Riemannian space $\GenMa$ will be considered.
 A distance function $\dist:\GenMa \times \GenMa \rightarrow \Re^+$ has the following properties for all $\P_1, \P_2,\P_3 \in \GenMa$:
+\iflatexml\else } \fi
 
 \begin{enumerate}
 [label=(\roman*)]
@@ -127,13 +142,15 @@ A distance function $\dist:\GenMa \times \GenMa \rightarrow \Re^+$ has the follo
 \item Symmetry: \tab $\dist(\P_1, \P_2) = \dist(\P_2, \P_1)$ ,
 \item Triangular inequality:  \tab $\dist(\P_1, \P_3) \leq \dist(\P_1, \P_2) + \dist(\P_2, \P_3)$ .
 \end{enumerate}
+\iflatexml\else \changes{ \fi
 Divergences are very similar to distances with the difference that properties (iii) and (iv) do not have to be satisfied. 
 In the context of covariance matrices, divergences and distances should both induce a Riemannian metric on the manifold of SPD matrices. 
 \iflatexml\else } \fi
-\iflatexml\else \changes{ \fi
 
 \subsubsection{Euclidean distance}
+\iflatexml\else \changes{ \fi
 The Euclidean distance between two matrices is represented by the \emph{Frobenius norm} of their difference:
+\iflatexml\else } \fi
 
 \begin{equation}
 \distF(\P_1, \P_2) = \lVert \P_1-\P_2 \rVert _F
@@ -151,8 +168,10 @@ The arithmetic mean is drawn from a family of power means ($\P_{t|t = 1}$) [TODO
 \P_t = \left( \frac{1}{\Nb}\sum_{\nb=1}^{\Nb} \P_\nb^t \right)^{\frac{1}{t}}, \ t \in [-1,+1].
 \label{eq:mean_power}
 \end{equation}
+\iflatexml\else \changes{ \fi
 From the same family can be drawn the \emph{geometric mean} ($\P_{t|t \rightarrow 0}$) and the \emph{harmonic mean} ($\P_{t|t = -1}$).
 \iflatexml\else } \fi
+
 \iflatexml\else \changes{ \fi
 We consider the arithmetic mean $\PmE$, as a baseline. 
 This averaging of covariance is usually not adequate in the space of SPD matrices for two main reasons. 
@@ -161,8 +180,9 @@ Secondly, the Euclidean averaging of covariance SPD leads to a \emph{swelling ef
 And since the determinant of a covariance matrix is a direct measure of the dispersion of the multivariate variable, the swelling effect introduces a large distortion of the data dispersion \cite{arsigny_geometric_2007}.
 For these reasons, other means that adapt to the geometry of convex cone of SPD matrices are used. 
 \iflatexml\else } \fi
-\iflatexml\else \changes{ \fi
+
 \subsubsection{Affine Invariant distance}
+\iflatexml\else \changes{ \fi
 The affine invariant distance between two points is defined by the length of the curve connecting these point on the Riemannian manifold. 
 A differential manifold is a topological curved space that is locally similar to the Euclidean space and is differentiable globally. 
 The convex cone of SPD matrices is a manifold that can be endowed with a Riemannian metric; such manifolds are called Riemannian manifold.
@@ -174,6 +194,7 @@ This inner product varies smoothly from point to point on the manifold,
 $\metric$ is a function that assigns, for each point $\P \in \GenMa$, an inner product in the tangent space $T_\P\GenMa$  .
 The Riemannian metric allows us to compute the length of vectors or distance between two point on the tangent space, and through appropriate mapping \cite{pennec_riemannian_2006}, the length of the corresponding \emph{geodesic} (i.e. the shortest curve connecting two point) on the manifold $\GenMa$.
 The \emph{affine-invariant distance} is the distance between two points of a Riemannian  manifold endowed with an invariant Riemannian metric $g_{\P}$ defined at $\P$:
+\iflatexml\else } \fi
 \begin{equation}
 \begin{split}
 g_{\P}(\S_1, \S_2) & = \left\langle \S_1 , \S_2 \right\rangle_\P \\
@@ -189,22 +210,24 @@ The affine-invariant Riemannian distance is defined as:
 \distAIRM(\P_1, \P_2) = \lVert \log(\P_1^{-1}\P_2) \rVert_F = \left[ \sum_{\chI=1}^{\dc} \log^2 \lambda_\chI \right]^{1/2},
 \label{eq:dist_air}
 \end{equation}
+\iflatexml\else \changes{ \fi
 where $\lambda_\chI$, $\chI = 1, \dots, \dc$, are the eigenvalues of $\P_1^{-1}\P_2$.
 \iflatexml\else } \fi
 
 \iflatexml\else \changes{ \fi
 Inserting \eqref{eq:dist_air} in \eqref{eq:mean} yields the mean $\PmAIRM$ associated to the affine-invariant metric. 
 It is the solution to 
+\iflatexml\else } \fi
 \begin{equation}
 \sum_{\nb=1}^\Nb \log(\PmAIRM^{-1/2} \P_\nb \PmAIRM^{-1/2})=0
 \label{mean_air}
 \end{equation}
 It has no close form solution and can be solved iteratively through a gradient descent algorithm \cite{letcher_principal_2004}. 
-\iflatexml\else } \fi
 
 \iflatexml\else \changes{ \fi
 These distance and mean are invariant to affine transformations. 
 Some of these invariances are particularly important to preserve the geometric topology of the Riemannian manifold of SDP matrices. Let $f$ be an affine-invariant function defined on $\GenMa$ (e.g. distance or mean),
+\iflatexml\else }  \fi
 \begin{enumerate}[label=(\roman*)]
 \item \emph{Invariance under congruent transformation}
 \begin{equation}
@@ -227,14 +250,14 @@ Another interesting property of the affine-invariant metric is its invariance to
 f(\P_1, \P_2) = f(\P \P_1, \P \P_2) = f(\P_1 \P, \P_2 \P)
 \label{eq:invar_mult}
 \end{equation}
-\iflatexml\else }  \fi
 
-\iflatexml\else \changes{ \fi
 \subsubsection{Log-Euclidean}
+\iflatexml\else \changes{ \fi
 The Log-Euclidean is another distance that takes into consideration the topology of Riemannian manifolds. 
 It was introduced by Arsigny et al. to alleviate the complexity involved in the computation of the affine-invariant distance and its related mean \citep{arsigny_geometric_2007}.
 The mean associated to the Log-Euclidean distance corresponds to an arithmetic mean in the domain of matrix algorithm.  
 The distance between two SPD matrices is expressed as
+\iflatexml\else } \fi
 \begin{equation}
 \distLE(\P_1, \P_2) = \lVert \log(\P_1)-\log(\P_2) \rVert_F ,
 \label{eq:dist_LE}
@@ -251,12 +274,13 @@ Moreover, the obtained mean is, to a large extent, similar to the affine-invaria
 \item they are often equal in value, if not, $\mathrm{trace}(\PmLE) > \mathrm{trace}(\PmAIRM)$ ;
 \item Log-Euclidean mean has properties close to affine-invariance (i.e. similarity-invariance instead of congruent-invariance).
 \end{enumerate}
-\iflatexml\else } \fi
+
 \iflatexml\else \changes{ \fi
 \subsubsection{Bregman divergences}
 Divergences have been considered for the computation of mean in applications of clustering and classification of SPD matrices due to the fact that they induce a Riemannian metric given by \eqref{eq:metric-riemann}. 
 Consider a strictly convex and differentiable function $f: \Re \rightarrow \Re$; then $f(x) \geq f(y) + f'(y)(x-y)$ and $f(x) = f(y) + f'(y)(x-y) \Leftrightarrow x = y$ for all $x,y \in \Re$.  
 The Bregman divergence, \citep[introduced by Bregman in][]{bregman_relaxation_1967} is the difference between the left and right sides of the inequality:
+\iflatexml\else } \fi
 \begin{equation}
 \divB{f}(x,y) = f(x)-f(y)-f'(y)(x-y).
 \label{eq:bregman-div}
@@ -271,19 +295,20 @@ Geometrically, the Bregman divergence can be seen as the measure of the differen
 \caption{Geometry of the Bregman divergence with the seed function $f(z)=\frac{1}{2}z^\intercal z$. $h(z)$ is a hyperplane tangent to $f(z)$ at $y$. While it accurately represent $f(y)$, it underestimate $f(x)$. The Bregman divergence measures how much the representation of $f(x)$ on $h(z)$ \emph{diverges} from $f(x)$ (in green).}
 \label{fig:bregman-projection}
 \end{figure}
-\iflatexml\else } \fi
 
 \iflatexml\else \changes{ \fi
 The scalar divergence can be directly adapted to SPD matrices as:
+\iflatexml\else } \fi
 \begin{equation}
 \divB{f}(\P_1,\P_2) = \varphi(\P_1) - \varphi(\P_2) - \varphi'(\P_2)(\P_1 - \P_2),
 \end{equation}
 where the seed function $f$ is combined with a function $g: \GenMa \rightarrow \Re^\dc$ that maps an SPD matrix to a vector containing its eigenvalues: $\varphi = f \circ \lambda$.\\
 Or, $\lambda$ can be the trace function, $\lambda: \GenMa \rightarrow \Re$ that maps an SPD matrix to its trace.
 For convenience, $f \circ \lambda$ will be referred to as $f(X)$ or $f(\P)$. 
-\iflatexml\else } \fi
+
 \iflatexml\else \changes{ \fi
 Depending on the seed function used, various divergences can be defined defined from the Bregman divergence.
+\iflatexml\else } \fi
 
 %- Squared Norm -> Euclidean divergence = Frobenious Norm (Dhillon 2007)
 \\ \\ \textbf{Euclidean divergence} \\
@@ -311,14 +336,16 @@ The mean of SPD matrices induced by the Kullback-Leibler divergence is calculate
 
 %- logarithmic barrier function -> Log det divergence (Dhillon 2007)
 \\ \\ \textbf{Log-det divergence} \\
+\iflatexml\else \changes{ \fi
 Another function often used in Bregman divergences of symmetric matrices is the \emph{logarithmic barrier} \cite{chebbi_means_2012,dhillon_matrix_2007,cherian_efficient_2011,sra_positive_2016}
 \[ f(x) = -log(x) \rightarrow f(\P) = -\log \det(\P) \] 
 The corresponding divergence is called the \emph{log-det} divergence and is given by \cite{chebbi_means_2012}:
+\iflatexml\else } \fi
 \begin{equation}
 \divB{ld}(\P_1,\P_2) = \left\langle \P_1, \P_2^{-1} \right\rangle - \log \det(\P_1 \P_2^{-1})-\dc
 \label{eq:div-log-det}
 \end{equation}
-\iflatexml\else } \fi
+
 \iflatexml\else \changes{ \fi
 The asymmetry of divergences result in the concept of right- and left-sided mean:
 \[ \divB{f}(\P_1,\P_2) \neq \divB{f}(\P_2,\P_1) \Rightarrow \argmin_{\P \in \Ma} \sum_{\nb=1}^{\Nb} \dist^2(\P_\nb,\P) \neq \argmin_{\P \in \Ma} \sum_{\nb=1}^{\Nb} \dist^2(\P, \P_\nb) \]
@@ -326,6 +353,7 @@ It is usually sufficient to consider a single sided divergence.
 In this work right-sided divergence and mean are used.
 In some cases however, the asymmetry can be undesirable. This has led to the symmetrization of some Bregman divergences.
 Often the symmetrization consist in an averaging of left- and right-sided divergence [todo: reference].
+\iflatexml\else } \fi
 
 \\ \\ \textbf{S-divergence}\\
 An example of a symmetric divergence is the S-divergence. 
@@ -342,6 +370,7 @@ The S-divergence is obtained by using the logarithmic barrier function for the p
 \divB{S}(\P_1,\P_2) = \log \det(\frac{\P_1+\P_2}{2}) - \frac{1}{2}\log \det(\P_1 \P_2)
 \label{eq:div-s}
 \end{equation}  
+\iflatexml\else \changes{ \fi
 Despite its symmetry, S-Divergence is not a metric. It does not satisfy the triangular inequality criterion. 
 However, its square root has been shown to be a distance \cite{sra_positive_2016}.
 \iflatexml\else } \fi
@@ -353,6 +382,7 @@ Other symmetric divergences can be obtained in the same fashion; for instance th
 \iflatexml\else \changes{ \fi
 Another family of divergence is defined when the right- and left-sided divergence are mixed in a weighted manner.
 One such family is the \emph{$\alpha$-divergence} \cite{nielsen_clustering_2014}.
+\iflatexml\else } \fi
 \\ \\ \textbf{Log-det $\alpha$-divergence}\\
 In this work, the $\alpha$-divergence used is defined by \cite{chebbi_means_2012}:
 \begin{equation}
@@ -376,7 +406,6 @@ Using the logarithmic-barrier function yields:
 \end{equation}   
 $\divB{LD}^{1}$ and $\divB{LD}^{-1}$ are right- and left-sided Bregman divergences respectively.
 At $\alpha=0$, the log-det $\alpha$ divergence yields a symmetric divergence corresponding to the \emph{Bhattacharrya} divergence \cite{chebbi_means_2012,sra_positive_2016}. 
-\iflatexml\else } \fi
 
 %\subsubsection{log-det alpha divergence}
 %\subsubsection{Kullback Leibler divergence}
