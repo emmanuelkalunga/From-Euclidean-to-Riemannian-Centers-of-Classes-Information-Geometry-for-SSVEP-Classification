@@ -6,5 +6,6 @@ iflatexml_else_changes_fi_The__.tex
 section_Experimental_Results_label_sec__.tex
 figures/covmat-eps-converted-to1/covmat-eps-converted-to1.png
 figures/covmat11-eps-converted-to1/covmat11-eps-converted-to1.png
+The_MDM_classifier_is_simple__.tex
 section_Conclusion_label_sec_conclusion__.tex
 vspace_6pt_optional_supplementary_The__.tex
