@@ -8,15 +8,14 @@
 \usepackage[]{amssymb}
 \usepackage[]{graphicx}
 \usepackage[]{subfigure}
-% \usepackage[]{tabto} % Not (yet) supported by LaTeXML.
+\iflatexml\else  \usepackage[]{tabto} \fi % Not (yet) supported by LaTeXML.
 \usepackage[]{rotating}
-% \usepackage[]{algorithm} % Not (yet) supported by LaTeXML.
-% \usepackage[noend]{algpseudocode} % Not (yet) supported by LaTeXML.
-% \usepackage[]{adjustbox,lipsum} % Not (yet) supported by LaTeXML.
-% \usepackage[]{adjustbox,lipsum} % Not (yet) supported by LaTeXML.
+\iflatexml\else \usepackage[]{algorithm} \fi % Not (yet) supported by LaTeXML.
+\iflatexml\else \usepackage[noend]{algpseudocode} \fi % Not (yet) supported by LaTeXML.
+\iflatexml\else \usepackage[]{adjustbox,lipsum} \fi % Not (yet) supported by LaTeXML.
 \usepackage[utf8]{inputenc}
 \usepackage[usenames, dvipsnames]{color}
-% \usepackage[]{enumitem} % Not (yet) supported by LaTeXML.
+\iflatexml\else \usepackage[]{enumitem} \fi % Not (yet) supported by LaTeXML.
 %\makeatletter
 %\makeatother
 \newcommand{\ra}[1][]{\renewcommand{\arraystretch}{#1}}
@@ -95,23 +94,25 @@
 \newcommand{\divB}[1][]{\ensuremath{D_{\operatorname{#1}}}}
 \newcommand{\changes}[1][]{\textcolor{red}{#1}}
 
-%\setcounter{tocdepth}{3}
-%\firstpage{1}
-%\setcounter{page}{\@firstpage}
+\iflatexml\else 
+ \setcounter{tocdepth}{3}
+ \firstpage{1}
+ \setcounter{page}{\@firstpage}
 % First macro on next line not (yet) supported by LaTeXML: 
-% \articlenumber{x}
+ \articlenumber{x}
 % First macro on next line not (yet) supported by LaTeXML: 
-% \doinum{10.3390/------}
+ \doinum{10.3390/------}
 % First macro on next line not (yet) supported by LaTeXML: 
-% \pubvolume{xx}
-%\pubyear{2016}
+ \pubvolume{xx}
+ \pubyear{2016}
 % First macro on next line not (yet) supported by LaTeXML: 
-% \copyrightyear{2016}
+ \copyrightyear{2016}
 % First macro on next line not (yet) supported by LaTeXML: 
-% \externaleditor{Academic Editor: name}
+ \externaleditor{Academic Editor: name}
 % First macro on next line not (yet) supported by LaTeXML: 
-% \history{Received: date; Accepted: date; Published: date}
-\iflatexml\else \theoremstyle{mdpi} \fi
+ \history{Received: date; Accepted: date; Published: date}
+ \theoremstyle{mdpi} 
+\fi
  \newcounter{thm}
  \setcounter{thm}{0}
  \newcounter{ex}
@@ -130,18 +131,20 @@
  \newtheorem{ExamplesandDefinitions}[ex]{Examples and Definitions}
  \newtheorem{Remark}[re]{Remark}
  \newtheorem{Definition}[thm]{Definition}
+\iflatexml\else 
 % First macro on next line not (yet) supported by LaTeXML: 
-% \Title{From Euclidean to Riemannian Centers of Classes: Information Geometry for SSVEP Classification }%$^\S$
+ \Title{From Euclidean to Riemannian Centers of Classes: Information Geometry for SSVEP Classification }%$^\S$
 % First macro on next line not (yet) supported by LaTeXML: 
-% \Author{Emmanuel Kalunga $^{1,2}$*, Sylvain Chevallier $^{2}$, Quentin~Barth\'{e}lemy $^{3}$, Karim Djouani $^{1}$, Yskandar Hamamv$^{1}$ and Eric Monacelli $^{2,}$}
+ \Author{Emmanuel Kalunga $^{1,2}$*, Sylvain Chevallier $^{2}$, Quentin~Barth\'{e}lemy $^{3}$, Karim Djouani $^{1}$, Yskandar Hamam$^{1}$ and Eric Monacelli $^{2,}$}
 % First macro on next line not (yet) supported by LaTeXML: 
-% \AuthorNames{Emmanuel Kalunga, Sylvain Chevallier, Quentin~Barth\'{e}lemy, Karim Djouani, Yskandar Hamam and Eric Monacelli}
-%\address{%
-%$^{1}$ \quad Department of Electrical Engineering/F'SATI Tshwane University of Technology, Pretoria 0001, South Africa\\
-%$^{2}$ \quad Laboratoire d'Ing\'{e}nierie des Syst\`{e}mes de Versailles, Universit\'{e} de Versailles Saint-Quentin, 78140 Velizy, France\\
-%$^{2}$ \quad Mensia Technologies, ICM, H\^{o}pital de la Piti\'{e}-Salp\^{e}tri\`{e}re, 75013 Paris, France\\}
+ \AuthorNames{Emmanuel Kalunga, Sylvain Chevallier, Quentin~Barth\'{e}lemy, Karim Djouani, Yskandar Hamam and Eric Monacelli}
+\address{%
+$^{1}$ \quad Department of Electrical Engineering/F'SATI Tshwane University of Technology, Pretoria 0001, South Africa\\
+$^{2}$ \quad Laboratoire d'Ing\'{e}nierie des Syst\`{e}mes de Versailles, Universit\'{e} de Versailles Saint-Quentin, 78140 Velizy, France\\
+$^{2}$ \quad Mensia Technologies, ICM, H\^{o}pital de la Piti\'{e}-Salp\^{e}tri\`{e}re, 75013 Paris, France\\}
 % First macro on next line not (yet) supported by LaTeXML: 
-% \corres{Correspondence: emmanuelkalunga.k@gmail.com}
-%\keyword{Riemannian geometry; Divergences; Centroids; covariance matrices; EEG; SSVEP; BCI}
+ \corres{Correspondence: emmanuelkalunga.k@gmail.com}
+ \keyword{Riemannian geometry; Divergences; Centroids; covariance matrices; EEG; SSVEP; BCI}
 % First macro on next line not (yet) supported by LaTeXML: 
-% \DeclareMathOperator*{\argmax}{arg\,max}
+ \DeclareMathOperator*{\argmax}{arg\,max}
+\fi
