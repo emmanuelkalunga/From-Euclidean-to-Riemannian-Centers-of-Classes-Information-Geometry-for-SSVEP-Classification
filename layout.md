@@ -7,5 +7,6 @@ section_Experimental_Results_label_sec__.tex
 figures/covmat-eps-converted-to1/covmat-eps-converted-to1.png
 figures/covmat11-eps-converted-to1/covmat11-eps-converted-to1.png
 The_MDM_classifier_is_simple__.tex
+figures/swel-eps-converted-to1/swel-eps-converted-to1.png
 section_Conclusion_label_sec_conclusion__.tex
 vspace_6pt_optional_supplementary_The__.tex
