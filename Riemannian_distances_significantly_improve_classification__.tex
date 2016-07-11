@@ -1,0 +1,15 @@
+
+Riemannian distances significantly improve classification performances, with $\alpha$-divergence yielding the best results (81.56\%). 
+The value of $\alpha$ was set to 0.6 through cross-validation. 
+This procedure lasted 225.42 seconds and makes $\alpha$-divergence the most costly method, due to the optimization of its parameter $\alpha$. 
+Log-Euclidean yields lower classification accuracy (average 78.98\%) but could be computed faster than $\alpha$-divergence or Affine-Invariant distance.
+However, the Bhattacharyya distance has the lowest computational cost of the considered Riemannian distances (average CPU time 0.140s), with a higher average accuracy of 80.51\%. 
+So, it is good trade-off between efficiency and speed. 
+The accuracies and CPU time of the $\alpha$-divergence at different values of $\alpha$ are shown in Fig.~\ref{fig:alphacross}.
+It is seen that for $\alpha = \pm 1$, where $\alpha$-divergence represents a Bregman divergence associated with the log-determinant function, % also known as  log-det divergence, 
+the classification accuracy are at the lowest accuracy (25\%). 
+For all other values of alpha, the expected accuracy is 78.85$\pm$3.3\% and one can choose $-1 < \alpha < 1$ without any major impact on classification results.
+%$\alpha$ could thus be fixed to any value between $\left]-1,+1\right[$ without causing drastic deterioration of accuracy. 
+%For instance, the Bhattacharyya mean is equivalent to the $\alpha$-divergence mean with $\alpha$=0. 
+
+This experiment on real EEG data shows that it is crucial to process covariance matrices with dedicated Riemannian tools, impacting the efficiency of the classification. 
