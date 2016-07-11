@@ -16,8 +16,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[usenames, dvipsnames]{color}
 \iflatexml\else \usepackage[]{enumitem} \fi % Not (yet) supported by LaTeXML.
-%\makeatletter
-%\makeatother
+
 \newcommand{\ra}[1][]{\renewcommand{\arraystretch}{#1}}
 \newcommand{\X}[][]{\ensuremath{X}}
 \newcommand{\onlineX}[][]{\ensuremath{\chi}}
@@ -97,7 +96,9 @@
 \iflatexml\else 
  \setcounter{tocdepth}{3}
  \firstpage{1}
+ \makeatletter
  \setcounter{page}{\@firstpage}
+ \makeatother
 % First macro on next line not (yet) supported by LaTeXML: 
  \articlenumber{x}
 % First macro on next line not (yet) supported by LaTeXML: 
