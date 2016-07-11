@@ -13,7 +13,8 @@ Depending on the seed function used, various divergences can be defined defined 
 \iflatexml\else } \fi
 
 %- Squared Norm -> Euclidean divergence = Frobenious Norm (Dhillon 2007)
-\\ \\ \textbf{Euclidean divergence} \\
+%\\ \\ 
+\textbf{Euclidean divergence} \\
 The Frobenius norm is also a Bregman divergence in disguise. 
 It is obtained when the seed function  is the squared norm $f(x) = \frac{1}{2} \lVert x \rVert_2^2$ \cite{dhillon_matrix_2007}:
 \begin{equation}
@@ -27,7 +28,8 @@ The Euclidean mean of SPD matrices correspond to their arithmetic mean \eqref{eq
 %\end{equation} 
 
 %- Shannon Entropy -> KL div (Nilson 2009)
-\\ \\ \textbf{Kullback-Leibler divergence} \\
+%\\ \\ 
+\textbf{Kullback-Leibler divergence} \\
 Using the \emph{Shannon entropy} $f(x) = \sum_\nb x_\nb \log x_\nb$ yields the \emph{Kullback-Leibler} divergence \cite{nielsen_sided_2009}.
 It is also known as the \emph{relative entropy} or \emph{discrimination information}. The Kullback-Leibler divergence of SPD matrices $\P_1, \P_2 \in \Ma$ is given by:
 \begin{equation}
@@ -37,7 +39,8 @@ It is also known as the \emph{relative entropy} or \emph{discrimination informat
 The mean of SPD matrices induced by the Kullback-Leibler divergence is calculated iteratively \cite{chebbi_means_2012}. 
 
 %- logarithmic barrier function -> Log det divergence (Dhillon 2007)
-\\ \\ \textbf{Log-det divergence} \\
+%\\ \\ 
+\textbf{Log-det divergence} \\
 \iflatexml\else \changes{ \fi
 Another function often used in Bregman divergences of symmetric matrices is the \emph{logarithmic barrier} \cite{chebbi_means_2012,dhillon_matrix_2007,cherian_efficient_2011,sra_positive_2016}
 \[ f(x) = -log(x) \rightarrow f(\P) = -\log \det(\P) \] 
@@ -57,7 +60,8 @@ In some cases however, the asymmetry can be undesirable. This has led to the sym
 Often the symmetrization consist in an averaging of left- and right-sided divergence [todo: reference].
 \iflatexml\else } \fi
 
-\\ \\ \textbf{S-divergence}\\
+%\\ \\ 
+\textbf{S-divergence}\\
 An example of a symmetric divergence is the S-divergence. 
 It is obtained from the \emph{Jensen-Shannon} divergence which is a symmetrized Bregman divergence:
 \begin{equation}
@@ -85,7 +89,9 @@ Other symmetric divergences can be obtained in the same fashion; for instance th
 Another family of divergence is defined when the right- and left-sided divergence are mixed in a weighted manner.
 One such family is the \emph{$\alpha$-divergence} \cite{nielsen_clustering_2014}.
 \iflatexml\else } \fi
-\\ \\ \textbf{Log-det $\alpha$-divergence}\\
+
+%\\ \\ 
+\textbf{Log-det $\alpha$-divergence}\\
 In this work, the $\alpha$-divergence used is defined by \cite{chebbi_means_2012}:
 \begin{equation}
 \divB{f}^\alpha(\P_1,\P_2) = \frac{4}{1-\alpha^2}\left[ \frac{1-\alpha}{2} f(\P_1) + \frac{1+\alpha}{2}f(\P_2) - f \left( \frac{1-\alpha}{2}\P_1 + \frac{1+\alpha}{2}\P_2 \right) \right], \alpha^2 \neq 1
