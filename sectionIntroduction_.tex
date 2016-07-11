@@ -19,7 +19,7 @@ It entirely relies on covariance matrices and the fact that they belong the mani
 New EEG trials are assigned to the class whose average covariance matrix is the closest to the trial covariance matrix according to the affine-invariant Riemannian metric~\cite{moakher_differential_2005}.
 It is a simple, yet robust classification scheme outperforming complex and highly parametrized state-of-the-art classifiers. 
 The limitations of using Euclidean metrics in the computation of distances between SPD matrices and their means have been demonstrated \cite{arsigny_geometric_2007}. 
-Using information geometry, a number of Riemannian \changes{distances and divergences} have been developed and appropriately used on SPD matrices~\cite{amari_-divergence_2009,arsigny_geometric_2007}. %,ARS06
+Using information geometry, a number of Riemannian distances and divergences have been developed and appropriately used on SPD matrices~\cite{amari_-divergence_2009,arsigny_geometric_2007}. %,ARS06
 The present work applies some of these distances to SSVEP data, providing a practical analysis and a comparison with Euclidean metrics.
 
 Moreover, %, despite the interesting contribution of information geometry on EEG covariance matrix classification, 
@@ -30,7 +30,7 @@ In~\cite{congedo_new_2013}, the authors propose a rearrangement of the covarianc
 This contribution relies on this rearrangement to apply MDRM on covariance matrices of SSVEP signals.
 The signals are recorded in an application of assistive robotics where an SSVEP-based BCI is used in tandem with a 3D touchless interface based on IR-sensors as a multimodal system to control an arm exoskeleton~\cite{kalunga_hybrid_2014}.
 
-\changes{
+\iflatexml\else \changes{ \fi
 The paper is organized as follows: Section~\ref{sec:classofcov} describes the framework for the classification of covariance matrices. 
 It first presents the basic principles of classification~\ref{subsec:fund_class}. 
 It then describes how means of covariance matrices are computed~\ref{subsec:mean}. 
@@ -38,4 +38,4 @@ Since the notion of distance is key in the computation of the mean, a number of 
 Section~\ref{sec:classofcov} ends with the presentation of the MDM algorithm which is the classification method used in this work~\ref{subsec:mdm}. 
 In Section~\ref{sec:expresults}, the classification results obtained on real EEG dataset are presented and discussed.
 Section~\ref{sec:conclusion} concludes this paper.
-}
+\iflatexml\else } \fi
