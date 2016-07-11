@@ -111,7 +111,7 @@
 % \externaleditor{Academic Editor: name}
 % First macro on next line not (yet) supported by LaTeXML: 
 % \history{Received: date; Accepted: date; Published: date}
-\theoremstyle{mdpi}
+\iflatexml\else \theoremstyle{mdpi} \fi
  \newcounter{thm}
  \setcounter{thm}{0}
  \newcounter{ex}
@@ -122,7 +122,7 @@
  \newtheorem{Lemma}[thm]{Lemma}
  \newtheorem{Corollary}[thm]{Corollary}
  \newtheorem{Proposition}[thm]{Proposition}
-\theoremstyle{mdpidefinition}
+\iflatexml\else \theoremstyle{mdpidefinition} \fi
  \newtheorem{Characterization}[thm]{Characterization}
  \newtheorem{Property}[thm]{Property}
  \newtheorem{Problem}[thm]{Problem}
