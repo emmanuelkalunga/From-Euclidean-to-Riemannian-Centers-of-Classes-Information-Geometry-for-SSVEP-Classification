@@ -11,4 +11,4 @@ figures/swel-eps-converted-to1/swel-eps-converted-to1.png
 figures/alpha_cross-eps-converted-to1/alpha_cross-eps-converted-to1.png
 Riemannian_distances_significantly_improve_classification__.tex
 section_Conclusion_label_sec_conclusion__.tex
-vspace_6pt_optional_supplementary_The__.tex
+iflatexml_else_vspace_6pt_fi__.tex
