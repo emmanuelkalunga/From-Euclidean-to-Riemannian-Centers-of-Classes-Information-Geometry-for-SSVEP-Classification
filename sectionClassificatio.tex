@@ -193,7 +193,7 @@ This inner product varies smoothly from point to point on the manifold,
  \metric_\P: T_\P\GenMa\times T_\P\GenMa \rightarrow \Re \]
 $\metric$ is a function that assigns, for each point $\P \in \GenMa$, an inner product in the tangent space $T_\P\GenMa$  .
 The Riemannian metric allows us to compute the length of vectors or distance between two point on the tangent space, and through appropriate mapping \cite{pennec_riemannian_2006}, the length of the corresponding \emph{geodesic} (i.e. the shortest curve connecting two point) on the manifold $\GenMa$.
-The \emph{affine-invariant distance} is the distance between two points of a Riemannian  manifold endowed with an invariant Riemannian metric $g_{\P}$ defined at $\P$:
+The \emph{affine-invariant Riemannian distance} is the distance between two points of a Riemannian  manifold endowed with an invariant Riemannian metric $g_{\P}$ defined at $\P$:
 \iflatexml\else } \fi
 \begin{equation}
 \begin{split}
@@ -215,7 +215,7 @@ where $\lambda_\chI$, $\chI = 1, \dots, \dc$, are the eigenvalues of $\P_1^{-1}\
 \iflatexml\else } \fi
 
 \iflatexml\else \changes{ \fi
-Inserting \eqref{eq:dist_air} in \eqref{eq:mean} yields the mean $\PmAIRM$ associated to the affine-invariant metric. 
+Inserting \eqref{eq:dist_air} in \eqref{eq:mean} yields the mean $\PmAIRM$ associated to the affine-invariant Riemannian metric. 
 It is the solution to 
 \iflatexml\else } \fi
 \begin{equation}
@@ -226,7 +226,7 @@ It has no close form solution and can be solved iteratively through a gradient d
 
 \iflatexml\else \changes{ \fi
 These distance and mean are invariant to affine transformations. 
-Some of these invariances are particularly important to preserve the geometric topology of the Riemannian manifold of SDP matrices. Let $f$ be an affine-invariant function defined on $\GenMa$ (e.g. distance or mean),
+Some of these invariances are particularly important to preserve the geometric topology of the Riemannian manifold of SDP matrices. Let $f$ be an affine-invariant Riemannian function defined on $\GenMa$ (e.g. distance or mean),
 \iflatexml\else }  \fi
 \begin{enumerate}[label=(\roman*)]
 \item \emph{Invariance under congruent transformation}
@@ -245,7 +245,7 @@ f(\P_1,\P_2) = f(\P_1^{-1},\P_2^{-1})
 \label{eq:invar_invers2}
 \end{equation}
 \end{enumerate}
-Another interesting property of the affine-invariant metric is its invariance to left- and right-multiplication by a positive matrix.
+Another interesting property of the affine-invariant Riemannian metric is its invariance to left- and right-multiplication by a positive matrix.
 \begin{equation}
 f(\P_1, \P_2) = f(\P \P_1, \P \P_2) = f(\P_1 \P, \P_2 \P)
 \label{eq:invar_mult}
@@ -254,7 +254,7 @@ f(\P_1, \P_2) = f(\P \P_1, \P \P_2) = f(\P_1 \P, \P_2 \P)
 \subsubsection{Log-Euclidean}
 \iflatexml\else \changes{ \fi
 The Log-Euclidean is another distance that takes into consideration the topology of Riemannian manifolds. 
-It was introduced by Arsigny et al. to alleviate the complexity involved in the computation of the affine-invariant distance and its related mean \citep{arsigny_geometric_2007}.
+It was introduced by Arsigny et al. to alleviate the complexity involved in the computation of the affine-invariant Riemannian distance and its related mean \citep{arsigny_geometric_2007}.
 The mean associated to the Log-Euclidean distance corresponds to an arithmetic mean in the domain of matrix algorithm.  
 The distance between two SPD matrices is expressed as
 \iflatexml\else } \fi
@@ -267,8 +267,8 @@ and its associated mean is defined explicitly:
 \PmLE = \exp \left(\sum_{\nb=1}^{\Nb} \log(\P_\nb) \right) .
 \label{eq:mean_LE}
 \end{equation}
-Unlike the affine-invariant mean, the Log-Euclidean mean as a closed form expression which gives it a large computational advantage. 
-Moreover, the obtained mean is, to a large extent, similar to the affine-invariant mean:
+Unlike the affine-invariant Riemannian mean, the Log-Euclidean mean as a closed form expression which gives it a large computational advantage. 
+Moreover, the obtained mean is, to a large extent, similar to the affine-invariant Riemannian mean:
 \begin{enumerate}[label=(\roman*)]
 \item they have the same determinants which correspond to the geometric mean of the determinants of their building matrices: \[ |\PmLE| = |\PmAIRM| = \prod_{\nb=1}^{\Nb} (|\P_\nb|)^{1/\Nb} = \exp(\frac{1}{\Nb}\sum_{\nb=1}^{\Nb}\log(|\P_\nb|)) \] ;
 \item they are often equal in value, if not, $\mathrm{trace}(\PmLE) > \mathrm{trace}(\PmAIRM)$ ;
