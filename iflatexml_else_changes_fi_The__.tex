@@ -4,9 +4,9 @@ The scalar divergence can be directly adapted to SPD matrices as:
 \begin{equation}
 \divB{f}(\P_1,\P_2) = \varphi(\P_1) - \varphi(\P_2) - \varphi'(\P_2)(\P_1 - \P_2),
 \end{equation}
-where the seed function $f$ is combined with a function $g: \GenMa \rightarrow \Re^\dc$ that maps an SPD matrix to a vector containing its eigenvalues: $\varphi = f \circ \lambda$.\\
-Or, $\lambda$ can be the trace function, $\lambda: \GenMa \rightarrow \Re$ that maps an SPD matrix to its trace.
-For convenience, $f \circ \lambda$ will be referred to as $f(X)$ or $f(\P)$. 
+where the seed function $f$ is combined with a function $g: \GenMa \rightarrow \Re^\dc$ that maps an SPD matrix to a vector containing its eigenvalues: $\varphi = f \circ g$.\\
+Or, $g$ can be the trace function, $g: \GenMa \rightarrow \Re$ that maps an SPD matrix to its trace.
+For convenience, $f \circ g$ will be referred to as $f(X)$ or $f(\P)$. 
 
 \iflatexml\else \changes{ \fi
 Depending on the seed function used, various divergences can be defined defined from the Bregman divergence.
