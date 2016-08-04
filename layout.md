@@ -4,6 +4,7 @@ sectionClassificatio.tex
 figures/bregman_projection1/bregman_projection1.png
 iflatexml_else_changes_fi_The__.tex
 section_Experimental_Results_label_sec__.tex
+begin_figure_h_centering_subfigure__.tex
 figures/covmat-eps-converted-to1/covmat-eps-converted-to1.png
 figures/covmat11-eps-converted-to1/covmat11-eps-converted-to1.png
 The_MDM_classifier_is_simple__.tex
