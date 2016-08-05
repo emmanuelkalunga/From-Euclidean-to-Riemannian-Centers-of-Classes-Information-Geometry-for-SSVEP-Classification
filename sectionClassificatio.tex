@@ -159,7 +159,7 @@ The Euclidean distance between two matrices is represented by the \emph{Frobeniu
 In \eqref{eq:mean}, this yields the arithmetic mean:
 
 \begin{equation}
-\PmE = \frac{1}{\Nb}\sum_{\nb=1}^{\Nb} \P_\nb
+\PmE = \frac{1}{\Nb} \sum_{\nb=1}^{\Nb} \P_\nb
 \label{eq:mean_arithmetic}
 \end{equation}
 The arithmetic mean is drawn from a family of power means ($\P_{t|t = 1}$) [TODO: reference Lim2012]:
@@ -264,7 +264,7 @@ The distance between two SPD matrices is expressed as
 \end{equation}
 and its associated mean is defined explicitly:
 \begin{equation}
-\PmLE = \exp \left(\sum_{\nb=1}^{\Nb} \log(\P_\nb) \right) .
+\PmLE = \exp \left( \frac{1}{\Nb} \sum_{\nb=1}^{\Nb} \log(\P_\nb) \right) .
 \label{eq:mean_LE}
 \end{equation}
 Unlike the affine-invariant Riemannian mean, the Log-Euclidean mean as a closed form expression which gives it a large computational advantage. 
