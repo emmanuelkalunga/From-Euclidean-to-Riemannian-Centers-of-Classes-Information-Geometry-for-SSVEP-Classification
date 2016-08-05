@@ -165,7 +165,7 @@ In \eqref{eq:mean}, this yields the arithmetic mean:
 The arithmetic mean is drawn from a family of power means ($\P_{t|t = 1}$) [TODO: reference Lim2012]:
 
 \begin{equation}
-\P_t = \left( \frac{1}{\Nb}\sum_{\nb=1}^{\Nb} \P_\nb^t \right)^{\frac{1}{t}}, \ t \in [-1,+1].
+\P_t = \left( \frac{1}{\Nb} \sum_{\nb=1}^{\Nb} \P_\nb^t \right)^{\frac{1}{t}}, \ t \in [-1,+1].
 \label{eq:mean_power}
 \end{equation}
 \iflatexml\else \changes{ \fi
@@ -254,7 +254,7 @@ f(\P_1, \P_2) = f(\P \P_1, \P \P_2) = f(\P_1 \P, \P_2 \P)
 \subsubsection{Log-Euclidean}
 \iflatexml\else \changes{ \fi
 The Log-Euclidean is another distance that takes into consideration the topology of Riemannian manifolds. 
-It was introduced by Arsigny et al. to alleviate the complexity involved in the computation of the affine-invariant Riemannian distance and its related mean \citep{arsigny_geometric_2007}.
+It was introduced by Arsigny \textit{et al.} \citep{arsigny_geometric_2007} to alleviate the complexity involved in the computation of the affine-invariant Riemannian distance and its related mean.
 The mean associated to the Log-Euclidean distance corresponds to an arithmetic mean in the domain of matrix algorithm.  
 The distance between two SPD matrices is expressed as
 \iflatexml\else } \fi
@@ -270,7 +270,7 @@ and its associated mean is defined explicitly:
 Unlike the affine-invariant Riemannian mean, the Log-Euclidean mean as a closed form expression which gives it a large computational advantage. 
 Moreover, the obtained mean is, to a large extent, similar to the affine-invariant Riemannian mean:
 \begin{enumerate}[label=(\roman*)]
-\item they have the same determinants which correspond to the geometric mean of the determinants of their building matrices: \[ \det \PmLE = \det \PmAIRM  = \prod_{\nb=1}^{\Nb} (\det \P_\nb)^{1/\Nb} = \exp \left( \frac{1}{\Nb}\sum_{\nb=1}^{\Nb}\log(\det \P_\nb) \right) \] ;
+\item they have the same determinants which correspond to the geometric mean of the determinants of their building matrices: \[ \det \PmLE = \det \PmAIRM  = \prod_{\nb=1}^{\Nb} (\det \P_\nb)^{1/\Nb} = \exp \left( \frac{1}{\Nb} \sum_{\nb=1}^{\Nb} \log( \det \P_\nb) \right) \] ;
 \item they are often equal in value, if not, $\tr (\PmLE) > \tr (\PmAIRM)$ ;
 \item Log-Euclidean mean has properties close to affine-invariance (i.e. similarity-invariance instead of congruent-invariance).
 \end{enumerate}
