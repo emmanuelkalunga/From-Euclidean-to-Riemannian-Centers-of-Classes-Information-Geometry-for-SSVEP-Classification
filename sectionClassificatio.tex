@@ -199,11 +199,11 @@ The \emph{affine-invariant Riemannian distance} is the distance between two poin
 \begin{split}
 g_{\P}(\S_1, \S_2) & = \left\langle \S_1 , \S_2 \right\rangle_\P \\
  & = \left\langle  \P^{-\frac{1}{2}} \S_1  \P^{-\frac{1}{2}} ,  \P^{-\frac{1}{2}} \S_2  \P^{-\frac{1}{2}} \right\rangle_\eye\\
- & = \mathrm{trace} \left( \P^{-\frac{1}{2}} \S_1 \P^{-1} \S_2 \P^{-\frac{1}{2}} \right) ,
+ & = \tr \left( \P^{-\frac{1}{2}} \S_1 \P^{-1} \S_2 \P^{-\frac{1}{2}} \right) ,
 \end{split}
 \label{eq:metric-riemann}
 \end{equation}
-where $\eye$ is the identity matrix. 
+where $\eye$ is the identity matrix and $\tr$ the trace operator. 
 The inner product of the tangent vectors $\S_1$ and $\S_2$ at $\P$ is invariant by the action of $\P^{-\frac{1}{2}}$ transformation.
 The affine-invariant Riemannian distance is defined as:
 \begin{equation}
@@ -271,7 +271,7 @@ Unlike the affine-invariant Riemannian mean, the Log-Euclidean mean as a closed 
 Moreover, the obtained mean is, to a large extent, similar to the affine-invariant Riemannian mean:
 \begin{enumerate}[label=(\roman*)]
 \item they have the same determinants which correspond to the geometric mean of the determinants of their building matrices: \[ |\PmLE| = |\PmAIRM| = \prod_{\nb=1}^{\Nb} (|\P_\nb|)^{1/\Nb} = \exp(\frac{1}{\Nb}\sum_{\nb=1}^{\Nb}\log(|\P_\nb|)) \] ;
-\item they are often equal in value, if not, $\mathrm{trace}(\PmLE) > \mathrm{trace}(\PmAIRM)$ ;
+\item they are often equal in value, if not, $\tr (\PmLE) > \tr (\PmAIRM)$ ;
 \item Log-Euclidean mean has properties close to affine-invariance (i.e. similarity-invariance instead of congruent-invariance).
 \end{enumerate}
 
