@@ -270,7 +270,7 @@ and its associated mean is defined explicitly:
 Unlike the affine-invariant Riemannian mean, the Log-Euclidean mean as a closed form expression which gives it a large computational advantage. 
 Moreover, the obtained mean is, to a large extent, similar to the affine-invariant Riemannian mean:
 \begin{enumerate}[label=(\roman*)]
-\item they have the same determinants which correspond to the geometric mean of the determinants of their building matrices: \[ \det \PmLE = \det \PmAIRM  = \prod_{\nb=1}^{\Nb} (\det \P_\nb)^{1/\Nb} = \exp(\frac{1}{\Nb}\sum_{\nb=1}^{\Nb}\log(\det \P_\nb)) \] ;
+\item they have the same determinants which correspond to the geometric mean of the determinants of their building matrices: \[ \det \PmLE = \det \PmAIRM  = \prod_{\nb=1}^{\Nb} (\det \P_\nb)^{1/\Nb} = \exp \left( \frac{1}{\Nb}\sum_{\nb=1}^{\Nb}\log(\det \P_\nb) \right) \] ;
 \item they are often equal in value, if not, $\tr (\PmLE) > \tr (\PmAIRM)$ ;
 \item Log-Euclidean mean has properties close to affine-invariance (i.e. similarity-invariance instead of congruent-invariance).
 \end{enumerate}
