@@ -207,7 +207,7 @@ where $\eye$ is the identity matrix.
 The inner product of the tangent vectors $\S_1$ and $\S_2$ at $\P$ is invariant by the action of $\P^{-\frac{1}{2}}$ transformation.
 The affine-invariant Riemannian distance is defined as:
 \begin{equation}
-\distAIRM(\P_1, \P_2) = \lVert \Log(\P_1^{-1}\P_2) \rVert_F = \left[ \sum_{\chI=1}^{\dc} \log^2 \lambda_\chI \right]^{1/2},
+\distAIRM(\P_1, \P_2) = \lVert \Log(\P_1^{-1}\P_2) \rVert_F = \left( \sum_{\chI=1}^{\dc} \log^2 \lambda_\chI \right)^{1/2},
 \label{eq:dist_air}
 \end{equation}
 \iflatexml\else \changes{ \fi
@@ -219,7 +219,7 @@ Inserting \eqref{eq:dist_air} in \eqref{eq:mean} yields the mean $\PmAIRM$ assoc
 It is the solution to 
 \iflatexml\else } \fi
 \begin{equation}
-\sum_{\nb=1}^\Nb \log(\PmAIRM^{-1/2} \P_\nb \PmAIRM^{-1/2})=0
+\sum_{\nb=1}^\Nb \Log(\PmAIRM^{-1/2} \P_\nb \PmAIRM^{-1/2})=0
 \label{mean_air}
 \end{equation}
 It has no close form solution and can be solved iteratively through a gradient descent algorithm \cite{letcher_principal_2004}. 
@@ -259,12 +259,12 @@ The mean associated to the Log-Euclidean distance corresponds to an arithmetic m
 The distance between two SPD matrices is expressed as
 \iflatexml\else } \fi
 \begin{equation}
-\distLE(\P_1, \P_2) = \lVert \log(\P_1)-\log(\P_2) \rVert_F ,
+\distLE(\P_1, \P_2) = \lVert \Log(\P_1)-\Log(\P_2) \rVert_F ,
 \label{eq:dist_LE}
 \end{equation}
 and its associated mean is defined explicitly:
 \begin{equation}
-\PmLE = \exp \left( \frac{1}{\Nb} \sum_{\nb=1}^{\Nb} \log(\P_\nb) \right) .
+\PmLE = \Exp \left( \frac{1}{\Nb} \sum_{\nb=1}^{\Nb} \Log(\P_\nb) \right) .
 \label{eq:mean_LE}
 \end{equation}
 Unlike the affine-invariant Riemannian mean, the Log-Euclidean mean as a closed form expression which gives it a large computational advantage. 
