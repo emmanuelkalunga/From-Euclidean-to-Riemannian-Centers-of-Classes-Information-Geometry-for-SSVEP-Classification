@@ -123,10 +123,10 @@ At $\alpha=0$, the log-det $\alpha$ divergence yields a symmetric divergence cor
 \subsubsection{Wasserstein}
 
 The Wasserstein distance, also known as the earth mover's distance, is a measure of distance between two probability distributions. It is the optimal cost of moving one probability distribution into another. 
-If the two probability distributions are pictured as two different ways of piling up a mass of sand, then the Wasserstein distance can be seen as the optimal cost of involved in transporting sand in from one piling to another [ref: Villani 2008].
+If the two probability distributions are pictured as two different ways of piling up a mass of sand, then the Wasserstein distance can be seen as the optimal cost of involved in transporting sand in from one piling to another~\cite{VIL08}.
 
 Let P(\mathcal{X}) and P(\mathcal{Y}) two spaces of probability measures,
-the optimal transport between two masses (or probability distributions) $\eta \in P(\mathcal{X})$ and $\nu \in P(\mathcal{Y})$ is defined as [ref: Villani 2008]:
+the optimal transport between two masses (or probability distributions) $\eta \in P(\mathcal{X})$ and $\nu \in P(\mathcal{Y})$ is defined as~\cite{VIL08}:
 \begin{equation}
 C(\eta, \nu) = \inf_{\pi \in \Pi(\eta,\nu)} \int c(x,y) d \pi(x,y),
 \label{eq:opttrans}
@@ -138,15 +138,13 @@ The Wassertein distance of order $p$ is defined as:
 W_p(\eta,\nu) =  \left( \inf_{\pi \in \Pi(\eta,\nu)} \int d(x,y)^p d\pi(x,y) \right)^{1/p}
 \label{eq:wasser}
 \end{equation}
-Using the Fr\'{e}chet distance, and following the development in \cite{barbaresco_geometric_2011}, the Wasserstein distance of multivariate Gaussian measure $\Eta$ and $\Nu$ with means $\mu_X$ and $\mu_Y$, and covariance matrices $\Sigma_X$ and $\Sigma_Y$, is expressed as:
+Using the Fr\'{e}chet distance, and following the development in~\cite{barbaresco_geometric_2011}, the Wasserstein distance of multivariate Gaussian measure $\Eta$ and $\Nu$ with means $\mu_X$ and $\mu_Y$, and covariance matrices $\Sigma_X$ and $\Sigma_Y$, is expressed as:
 \begin{equation}
 d_W(N(\mu_X, \Sigma_X),N(\mu_Y, \Sigma_Y)) = |\mu_X -\mu_Y|^2 + \tr\left[ \Sigma_X \right] + \tr\left[ \Sigma_Y \right] - 2 \tr\left[ \left( \Sigma_X^{1/2} \Sigma_Y \Sigma_X^{1/2} \right)^{1/2} \right] 
 \label{eq:dist_wass}
 \end{equation}
 
-Indeed the measure can be seen as the cost of moving 
-
-
+%Indeed the measure can be seen as the cost of moving 
 \begin{table}[h]
   \centering
   \begin{tabular}{ l | c | c | c |}
