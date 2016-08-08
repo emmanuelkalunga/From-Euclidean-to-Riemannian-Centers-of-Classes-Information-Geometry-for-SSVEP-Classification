@@ -43,7 +43,7 @@ The mean of SPD matrices induced by the Kullback-Leibler divergence is calculate
 \textbf{Log-det divergence} \\
 \iflatexml\else \changes{ \fi
 Another function often used in Bregman divergences of symmetric matrices is the \emph{logarithmic barrier} \cite{chebbi_means_2012,dhillon_matrix_2007,cherian_efficient_2011,sra_positive_2016}
-\[ f(x) = -\log(x) \rightarrow f(\P) = -\log \det(\P) \] 
+\[ f(x) = -log(x) \rightarrow f(\P) = -\log \det(\P) \] 
 The corresponding divergence is called the \emph{log-det} divergence and is given by \cite{chebbi_means_2012}:
 \iflatexml\else } \fi
 \begin{equation}
@@ -122,6 +122,31 @@ At $\alpha=0$, the log-det $\alpha$ divergence yields a symmetric divergence cor
 
 \subsubsection{Wasserstein}
 
+The Wasserstein distance, also known as the earth mover's distance, is a measure of distance between two probability distributions. It is the optimal cost of moving one probability distribution into another. 
+If the two probability distributions are pictured as two different ways of piling up a mass of sand, then the Wasserstein distance can be seen as the optimal cost of involved in transporting sand in from one piling to another [ref: Villani 2008].
+
+Let P(\mathcal{X}) and P(\mathcal{Y}) two spaces of probability measures,
+the optimal transport between two masses (or probability distributions) $\eta \in P(\mathcal{X})$ and $\nu \in P(\mathcal{Y})$ is defined as [ref: Villani 2008]:
+\begin{equation}
+C(\eta, \nu) = \inf_{\pi \in \Pi(\eta,\nu)} \int c(x,y) d \pi(x,y),
+\label{eq:opttrans}
+\end{equation}
+where $P(\eta, \nu)$ is the set of all joint probabilities on $\mathcal{X} \times \mathcal{Y}$; and $c(x,y)$ is the cost for transporting one unit of mass from $x$ to $y$.
+In the Wassertsein distance, the cost $c(x,y)$ is defined as a distance. 
+The Wassertein distance of order $p$ is defined as:
+\begin{equation}
+W_p(\eta,\nu) =  \left( \inf_{\pi \in \Pi(\eta,\nu)} \int d(x,y)^p d\pi(x,y) \right)^{1/p}
+\label{eq:wasser}
+\end{equation}
+Using the Fr\'{e}chet distance, and following the development in [ref: Barbaresco 2011], the Wasserstein distance of multivariate Gaussian measure $\Eta$ and $\Nu$ with means $\mu_X$ and $\mu_Y$, and covariance matrices $\Sigma_X$ and $\Sigma_Y$, is expressed as:
+\begin{equation}
+d_W(N(\mu_X, \Sigma_X),N(\mu_Y, \Sigma_Y)) = |\mu_X -\mu_Y|^2 + \tr\left[ \Sigma_X \right] + \tr\left[ \Sigma_Y \right] - 2 \tr\left[ \left( \Sigma_X^{1/2} \Sigma_Y \Sigma_X^{1/2} \right)^{1/2} \right] 
+\label{eq:dist_wass}
+\end{equation}
+
+Indeed the measure can be seen as the cost of moving 
+
+
 \begin{table}[h]
   \centering
   \begin{tabular}{ l | c | c | c |}
@@ -129,15 +154,15 @@ At $\alpha=0$, the log-det $\alpha$ divergence yields a symmetric divergence cor
     & Distance/Divergence & Mean & References \rule[-5pt]{0pt}{18pt} \\ \hline
     \multicolumn{1}{|l|}{Euclidean} & $\distF(\P_1, \P_2) = \lVert \P_1-\P_2 \rVert _F$ & $\PmE = \frac{1}{\Nb}\sum_{\nb=1}^{\Nb} \P_\nb$ & \rule[-5pt]{0pt}{18pt} \\  
     \multicolumn{1}{|l|}{Harmonic} & $\distH(\P_1, \P_2) = \lVert \P_1^{-1}-\P_2^{-1} \rVert _F$ & $\PmH = \left(   \frac{1}{\Nb}\sum_{\nb=1}^{\Nb} \P_\nb^{-1} \right)^{-1} $ & \cite{lim_matrix_2012} \rule[-5pt]{0pt}{18pt} \\ 
-		 \multicolumn{1}{|l|}{Log-Euclidean} & $\distLE(\P_1, \P_2) = \lVert \Log(\P_1)-\Log(\P_2) \rVert_F$ & $\PmLE = \Exp \left( \frac{1}{\Nb} \sum_{\nb=1}^{\Nb} \Log(\P_\nb) \right) $ & \cite{arsigny_geometric_2007} 
+		 \multicolumn{1}{|l|}{Log-Euclidean} & $\distLE(\P_1, \P_2) = \lVert \log(\P_1)-\log(\P_2) \rVert_F$ & $\PmLE = \exp \left( \frac{1}{\Nb} \sum_{\nb=1}^{\Nb} \log(\P_\nb) \right) $ & \cite{arsigny_geometric_2007} 
 		\rule[-5pt]{0pt}{18pt} \\    
-     \multicolumn{1}{|l|}{Affine-invariant} & $\distAIRM(\P_1, \P_2) = \lVert \Log(\P_1^{-1}\P_2) \rVert_F$ & Algorithm 3 in \cite{fletcher_principal_2004}  & \cite{moakher_differential_2005,fletcher_principal_2004} 
+     \multicolumn{1}{|l|}{Affine-invariant} & $\distAIRM(\P_1, \P_2) = \lVert \log(\P_1^{-1}\P_2) \rVert_F$ & Algorithm 3 in \cite{fletcher_principal_2004}  & \cite{moakher_differential_2005,fletcher_principal_2004} 
 		\rule[-5pt]{0pt}{18pt} \\	
 	\multicolumn{1}{|l|}{Kullback-Leibler} & $\divB{KL}(\P_1, \P_2) = \frac{1}{2} \log \frac{\det(\P_2)}{\det(\P_1)} + \tr(\P_2 \P_1) - \dc$ & Algorithm 1 in \cite{chebbi_means_2012} & \cite{chebbi_means_2012,kang_composite_2009} \rule[-5pt]{0pt}{18pt} \\
 	\multicolumn{1}{|l|}{S-divergence} & $\divB{S}(\P_1,\P_2) = \log \det(\frac{\P_1+\P_2}{2}) - \frac{1}{2}\log \det(\P_1 \P_2)$ &  Eq. (17-20) in \cite{cherian_efficient_2011} & \cite{sra_positive_2016,cherian_efficient_2011} \rule[-5pt]{0pt}{18pt} \\
     \multicolumn{1}{|l|}{$\alpha$-divergence} & $\divB{LD}^\alpha (\P_1, \P_2)$ from Eq.~\eqref{eq:div-log-det-alpha} & Algorithm 1 in \cite{chebbi_means_2012} & \cite{chebbi_means_2012} \rule[-5pt]{0pt}{18pt} \\ 
     \multicolumn{1}{|l|}{Bhattacharyya} & $\divB{B}(\P_1, \P_2)=\left( \log \frac{ \det \frac{1}{2} (\P_1+\P_2)}{(\det (\P_1)\det(\P_2))^{1/2}} \right)^{1/2}$ & Algorithm 1 in \cite{chebbi_means_2012} & \cite{nielsen_matrix_2012,chebbi_means_2012} \rule[-5pt]{0pt}{18pt} \\ 
-    \multicolumn{1}{|l|}{Wasserstein} & $\distW = \tr \left( \P_1 + \P_2 - 2 \left( \P_1^{1/2} \P_2 \P_1^{1/2} \right)^{1/2} \right)$ & from \cite{barbaresco_geometric_2011} & \cite{barbaresco_geometric_2011} \rule[-5pt]{0pt}{18pt} \\ \hline
+    \multicolumn{1}{|l|}{Wasserstein} & $\distW = \tr \left( \P_1 + \P_2 - 2 \left( \P_1^{1/2} \P_2 \P_1^{1/2} \right)^{1/2} \right)$ & Eq. 6.2 in [ref: Agueh 2011]  & \cite{barbaresco_geometric_2011} [ref: Agueh 2011] \rule[-5pt]{0pt}{18pt} \\ \hline
   \end{tabular}
   \caption{Distances, divergences and means considered in the experimental study.}
   \label{tab:dist}
