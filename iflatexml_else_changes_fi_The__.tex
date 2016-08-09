@@ -193,7 +193,7 @@ The covariance matrices are estimated from a modified version of the input signa
 	\label{eq:ext_data}
 \end{equation}
 where $X_{\text{freq}_\df}$ is the input signal $\X$ band-pass filtered around frequency $\text{freq}_\df$, $\df=1, \ldots, \dF$. Henceforth, all EEG signals will be considered as filtered and modified by Eq.~\eqref{eq:ext_data}.
-The associated covariance matrix $\P \in \Re^{\dF\dc \times \dF\dc}$ is estimated using the Sch\"{a}fer skrinkage estimator \cite{schafer_shrinkage_2005} [TODO : ici mieux detailler, ou alors, faire reference a l'article publi\'e dans Neurcomputing].
+The associated covariance matrix $\P \in \Re^{\dF\dc \times \dF\dc}$ is estimated using the Sch\"{a}fer skrinkage estimator \cite{schafer_shrinkage_2005} which was experimentally found to be the most adequate for the set of data used \cite{kalunga_online_2016}.
 
 For SSVEP classification, $\dK = \dF + 1$ classes are considered: one class for each target frequency, and one for the resting state.
 As described in Algorithm~\ref{alg:mdm}, from $\dT$ labelled training trials $ \left\{ \X_{\ti} \right\}_{\ti=1}^{\dT}$ recorded per subject, $\dK$ centers of classes $\Pm^{(\ci)}$ are estimated (step~\ref{op:class_center}). 
