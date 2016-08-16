@@ -209,7 +209,7 @@ The associated covariance matrix $\P \in \mathcal{M}_{\dF\dc}$ is estimated usin
 
 For SSVEP classification, $\dK = \dF + 1$ classes are considered: one class for each target frequency, and one for the resting state.
 As described in Algorithm~\ref{alg:mdm}, from $\dT$ labelled training trials $ \left\{ \X_{\ti} \right\}_{\ti=1}^{\dT}$ recorded per subject, $\dK$ centers of classes $\Pm^{(\ci)}$ are estimated (step~\ref{op:class_center}). 
-In this step, outliers matrices are removed to have a reliable mean estimation \cite{barachant2013riemannian} (TODO: detail more this step, with hyper-parameters of the potato, ie zscore threshold and number of iterations).
+In this step, outliers matrices are removed to have a reliable mean estimation using Algorithm~\ref{alg:center_estimation} (TODO: with a z-score threshold $z_{th} = 2.5$ and a number of iterations $L=2$) \cite{barachant2013riemannian}.
 A new unlabeled test trial $\Y$ is predicted to belong to the class whose mean $\Pm^{(\ci)}$ is the closest to the trial covariance matrix, w.r.t. one of the distances from Table~\ref{tab:dist} (step~\ref{op:decision}).
 
 \begin{algorithm}
@@ -222,7 +222,7 @@ A new unlabeled test trial $\Y$ is predicted to belong to the class whose mean $
 	\begin{algorithmic}[1]
 	\State Compute covariance matrices $\P_{\ti}$ of $\X_\ti$ 
 	\State \textbf{for} $\ci$ = 1 \textbf{to} $\dK$ \textbf{do}
-	\State \quad Compute center of class $\Pm^{(\ci)}=\Rm(\{\P_{\ti}:\ti \in \setindex(\ci)\})$, cf Algorithm.~\ref{alg:center_estimation}
+	\State \quad Compute center of class $\Pm^{(\ci)}=\Rm(\{\P_{\ti}:\ti \in \setindex(\ci)\})$, cf Algorithm~\ref{alg:center_estimation}
 	\label{op:class_center}
 	\State \textbf{end}
 	\State Compute covariance matrix $\P$ of $\Y$, and classify it : $\clout = \arg \min_{\ci} \dist(\P, \Pm^{(\ci)})$
