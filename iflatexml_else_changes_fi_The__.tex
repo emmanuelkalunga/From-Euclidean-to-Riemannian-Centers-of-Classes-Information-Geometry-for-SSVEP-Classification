@@ -242,7 +242,10 @@ A new unlabeled test trial $\Y$ is predicted to belong to the class whose mean $
 	\State Compute covariance matrices $\P_{j}$ of $\X_j$ 
 	\State \textbf{for} $l$ = 1 \textbf{to} $L$ \textbf{do}
 	\State \quad Compute center of class : $\Pm_l=\Rm(\{\P_{j}:j \in \mathcal{J}\})$
-	\State \quad Compute distances $d_j = \dist(\P_j, \Pm)$
+	\State \quad Compute distances $d_j = \dist(\P_j, \Pm_l)$
+	\State \quad Compute zscores $z_j = (d_j - m)/\sigma$
+	\State \quad \textbf{for} $j$ \in \mathcal{J} \textbf{do}
+	\State \quad \quad \textbf{if} $z_j>z_{th}$ \textbf{then} $\mathcal{J} = \mathcal{J} \ j$
 	\State \textbf{end}
 	\State \textbf{return} $\Pm_L$
 	\end{algorithmic}
