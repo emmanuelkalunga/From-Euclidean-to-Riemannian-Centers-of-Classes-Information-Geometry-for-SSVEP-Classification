@@ -3,7 +3,7 @@ sectionIntroduction_.tex
 sectionClassificatio.tex
 figures/bregman_projection1/bregman_projection1.png
 iflatexml_else_changes_fi_The__.tex
-section_Experimental_Results_label_sec__.tex
+section_Experimental_results_label_sec__.tex
 figures/esta-expe/esta-expe.png
 figures/eeg_ssvep_signal/eeg_ssvep_signal.png
 label_fig_esta_expe_label_fig__.tex
