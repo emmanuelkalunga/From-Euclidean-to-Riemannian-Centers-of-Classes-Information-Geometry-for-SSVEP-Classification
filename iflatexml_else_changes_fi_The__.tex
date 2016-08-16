@@ -140,11 +140,18 @@ W_p(\eta,\nu) =  \left( \inf_{\pi \in \Pi(\eta,\nu)} \int d(x,y)^p d\pi(x,y) \ri
 \end{equation}
 Using the Fr\'{e}chet distance, and following the development in~\cite{barbaresco_geometric_2011}, the Wasserstein distance of multivariate Gaussian measure $\Eta$ and $\Nu$ with means $\mu_X$ and $\mu_Y$, and covariance matrices $\Sigma_X$ and $\Sigma_Y$, is expressed as:
 \begin{equation}
-d_W(N(\mu_X, \Sigma_X),N(\mu_Y, \Sigma_Y)) = |\mu_X -\mu_Y|^2 + \tr\left[ \Sigma_X \right] + \tr\left[ \Sigma_Y \right] - 2 \tr\left[ \left( \Sigma_X^{1/2} \Sigma_Y \Sigma_X^{1/2} \right)^{1/2} \right] 
+d_W(N(\mu_X, \Sigma_X),N(\mu_Y, \Sigma_Y)) = |\mu_X -\mu_Y|^2 + \tr \Sigma_X + \tr \Sigma_Y - 2 \tr \left( \left( \Sigma_X^{1/2} \Sigma_Y \Sigma_X^{1/2} \right)^{1/2} \right) \ .
 \label{eq:dist_wass}
 \end{equation}
-
+Since means are null in our case, the Wasserstein distance is:
+\begin{equation}
+d_W(N(\mu_X, \Sigma_X),N(\mu_Y, \Sigma_Y)) = \tr \Sigma_X + \tr \Sigma_Y - 2 \tr \left( \left( \Sigma_X^{1/2} \Sigma_Y \Sigma_X^{1/2} \right)^{1/2} \right) \ .
+\label{eq:dist_wass}
+\end{equation}
 %Indeed the measure can be seen as the cost of moving 
+
+All these distances and divergences are summed up in Table~\ref{tab:dist}.
+
 \begin{table}[h]
   \centering
   \begin{tabular}{ l | c | c | c |}
@@ -165,6 +172,8 @@ d_W(N(\mu_X, \Sigma_X),N(\mu_Y, \Sigma_Y)) = |\mu_X -\mu_Y|^2 + \tr\left[ \Sigma
   \caption{Distances, divergences and means considered in the experimental study.}
   \label{tab:dist}
 \end{table}
+
+
 \subsection{Minimum Distance to Mean classifier for SSVEP}
 \label{subsec:mdm}
 \iflatexml\else \changes{ \fi 
