@@ -164,10 +164,10 @@ All these distances and divergences are summed up in Table~\ref{tab:dist}.
      \multicolumn{1}{|l|}{Affine-invariant} & $\distAIRM = \lVert \Log(\P_1^{-1}\P_2) \rVert_F$ & Algorithm 3 in \cite{fletcher_principal_2004}  & \cite{moakher_differential_2005,fletcher_principal_2004} 
 		\rule[-5pt]{0pt}{18pt} \\	
 	\multicolumn{1}{|l|}{Kullback-Leibler} & $\divB{KL} = \frac{1}{2} \log \frac{\det(\P_2)}{\det(\P_1)} + \tr(\P_2 \P_1) - \dc$ & Algorithm 1 in \cite{chebbi_means_2012} & \cite{chebbi_means_2012,kang_composite_2009} \rule[-5pt]{0pt}{18pt} \\
-	\multicolumn{1}{|l|}{S-divergence} & $\divB{S} = \log \det(\frac{\P_1+\P_2}{2}) - \frac{1}{2}\log \det(\P_1 \P_2)$ &  Eq. (17-20) in \cite{cherian_efficient_2011} & \cite{sra_positive_2016,cherian_efficient_2011} \rule[-5pt]{0pt}{18pt} \\
+	\multicolumn{1}{|l|}{S-divergence} & $\divB{S} = \log \det(\frac{\P_1+\P_2}{2}) - \frac{1}{2}\log \det(\P_1 \P_2)$ &  Eq.~(17-20) in \cite{cherian_efficient_2011} & \cite{sra_positive_2016,cherian_efficient_2011} \rule[-5pt]{0pt}{18pt} \\
     \multicolumn{1}{|l|}{$\alpha$-divergence} & $\divB{LD}^\alpha$ from Eq.~\eqref{eq:div-log-det-alpha} & Algorithm 1 in \cite{chebbi_means_2012} & \cite{chebbi_means_2012} \rule[-5pt]{0pt}{18pt} \\ 
     \multicolumn{1}{|l|}{Bhattacharyya} & $\divB{B} = \left( \log \frac{ \det \frac{1}{2} (\P_1+\P_2)}{(\det (\P_1)\det(\P_2))^{1/2}} \right)^{1/2}$ & Algorithm 1 in \cite{chebbi_means_2012} & \cite{nielsen_matrix_2012,chebbi_means_2012} \rule[-5pt]{0pt}{18pt} \\ 
-    \multicolumn{1}{|l|}{Wasserstein} & $\distW = \tr \left( \P_1 + \P_2 - 2 \left( \P_1^{1/2} \P_2 \P_1^{1/2} \right)^{1/2} \right)$ & Eq. 6.2 in \cite{agueh_barycenters_2011}  & \cite{agueh_barycenters_2011, barbaresco_geometric_2011} \rule[-5pt]{0pt}{18pt} \\ \hline
+    \multicolumn{1}{|l|}{Wasserstein} & $\distW = \tr \left( \P_1 + \P_2 - 2 \left( \P_1^{1/2} \P_2 \P_1^{1/2} \right)^{1/2} \right)$ & Eq.~(6.2) in \cite{agueh_barycenters_2011}  & \cite{agueh_barycenters_2011, barbaresco_geometric_2011} \rule[-5pt]{0pt}{18pt} \\ \hline
   \end{tabular}
   \caption{Distances, divergences and means considered in the experimental study.}
   \label{tab:dist}
