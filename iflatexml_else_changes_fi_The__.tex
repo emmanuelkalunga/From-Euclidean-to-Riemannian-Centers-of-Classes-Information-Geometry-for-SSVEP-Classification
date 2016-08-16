@@ -235,8 +235,7 @@ A new unlabeled test trial $\Y$ is predicted to belong to the class whose mean $
 \caption{Center of Class Estimation}
 \label{alg:center_estimation}
 	Inputs: $\X_{j} \in \Re^{\dF \dc\times\dt}$, for $j \in \mathcal{J}$, a set of EEG trials of a same class. \\
-	Inputs: $L$, the number of iterations. \\
-	Input: $z_{th}$, the z-score threshold. \\
+	Inputs: $L$, the number of iterations and $z_{th}$, the z-score threshold. \\
 	Output: $\Pm$, the center of class.
 	\begin{algorithmic}[1]
 	\State Compute covariance matrices $\P_{j}$ of $\X_j$ 
