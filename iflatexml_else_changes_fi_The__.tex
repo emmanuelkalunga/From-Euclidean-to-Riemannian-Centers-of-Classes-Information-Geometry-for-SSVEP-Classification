@@ -222,12 +222,29 @@ A new unlabeled test trial $\Y$ is predicted to belong to the class whose mean $
 	\begin{algorithmic}[1]
 	\State Compute covariance matrices $\P_{\ti}$ of $\X_\ti$ 
 	\State \textbf{for} $\ci$ = 1 \textbf{to} $\dK$ \textbf{do}
-	\State \quad Compute center of class : $\Pm^{(\ci)}=\Rm(\P_{\ti}:\ti \in \setindex(\ci))$
+	\State \quad Compute center of class $\Pm^{(\ci)}=\Rm(\{\P_{\ti}:\ti \in \setindex(\ci)\})$, cf Algorithm.~\ref{alg:center_estimation}
 	\label{op:class_center}
 	\State \textbf{end}
 	\State Compute covariance matrix $\P$ of $\Y$, and classify it : $\clout = \arg \min_{\ci} \dist(\P, \Pm^{(\ci)})$
 	\label{op:decision}
 	\State \textbf{return} $\clout$
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Center of Class Estimation}
+\label{alg:center_estimation}
+	Inputs: $\X_{j} \in \Re^{\dF \dc\times\dt}$, for $j \in \mathcal{J}$, a set of EEG trials of a same class. \\
+	Inputs: $L$, the number of iterations. \\
+	Input: $z_{th}$, the z-score threshold. \\
+	Output: $\Pm$, the center of class.
+	\begin{algorithmic}[1]
+	\State Compute covariance matrices $\P_{j}$ of $\X_j$ 
+	\State \textbf{for} $l$ = 1 \textbf{to} $L$ \textbf{do}
+	\State \quad Compute center of class : $\Pm_l=\Rm(\{\P_{j}:j \in \mathcal{J}\})$
+	\State \quad Compute distances $d_j = \dist(\P_j, \Pm)$
+	\State \textbf{end}
+	\State \textbf{return} $\Pm_L$
 	\end{algorithmic}
 \end{algorithm}
 
