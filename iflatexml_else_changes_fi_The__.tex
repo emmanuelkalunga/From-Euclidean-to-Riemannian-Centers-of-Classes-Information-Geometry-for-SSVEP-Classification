@@ -125,17 +125,17 @@ At $\alpha=0$, the log-det $\alpha$ divergence yields a symmetric divergence cor
 The Wasserstein distance, also known as the earth mover's distance, is a measure of distance between two probability distributions. It is the optimal cost of moving one probability distribution into another. 
 If the two probability distributions are pictured as two different ways of piling up a mass of sand, then the Wasserstein distance can be seen as the optimal cost of involved in transporting sand in from one piling to another~\cite{VIL08}.
 
-Let P(\mathcal{X}) and P(\mathcal{Y}) two spaces of probability measures,
+Let $P(\mathcal{X})$ and $P(\mathcal{Y})$ two spaces of probability measures,
 the optimal transport between two masses (or probability distributions) $\eta \in P(\mathcal{X})$ and $\nu \in P(\mathcal{Y})$ is defined as~\cite{VIL08}:
 \begin{equation}
-C(\eta, \nu) = \inf_{\pi \in \Pi(\eta,\nu)} \int c(x,y) d \pi(x,y),
+C(\eta, \nu) = \inf_{\pi \in \Pi(\eta,\nu)} \int c(x,y) d \pi(x,y) \ ,
 \label{eq:opttrans}
 \end{equation}
 where $P(\eta, \nu)$ is the set of all joint probabilities on $\mathcal{X} \times \mathcal{Y}$; and $c(x,y)$ is the cost for transporting one unit of mass from $x$ to $y$.
 In the Wassertsein distance, the cost $c(x,y)$ is defined as a distance. 
 The Wassertein distance of order $p$ is defined as:
 \begin{equation}
-W_p(\eta,\nu) =  \left( \inf_{\pi \in \Pi(\eta,\nu)} \int d(x,y)^p d\pi(x,y) \right)^{1/p}
+W_p(\eta,\nu) =  \left( \inf_{\pi \in \Pi(\eta,\nu)} \int d(x,y)^p d\pi(x,y) \right)^{1/p} \ .
 \label{eq:wasser}
 \end{equation}
 Following the development in~\cite{barbaresco_geometric_2011}, the Wasserstein distance of multivariate Gaussian measure $\Eta$ and $\Nu$ with means $\mu_1$ and $\mu_2$, and covariance matrices $\P_1$ and $\P_2$, is expressed as:
