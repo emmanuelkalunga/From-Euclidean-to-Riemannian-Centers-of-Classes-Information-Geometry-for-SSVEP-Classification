@@ -159,9 +159,9 @@ All these distances and divergences are summed up in Table~\ref{tab:dist}.
     & Distance/Divergence & Mean & References \rule[-5pt]{0pt}{18pt} \\ \hline
     \multicolumn{1}{|l|}{Euclidean} & $\distF = \lVert \P_1-\P_2 \rVert _F$ & $\PmE = \frac{1}{\Nb}\sum_{\nb=1}^{\Nb} \P_\nb$ & \rule[-5pt]{0pt}{18pt} \\  
     \multicolumn{1}{|l|}{Harmonic} & $\distH = \lVert \P_1^{-1}-\P_2^{-1} \rVert _F$ & $\PmH = \left(   \frac{1}{\Nb}\sum_{\nb=1}^{\Nb} \P_\nb^{-1} \right)^{-1} $ & \cite{lim_matrix_2012} \rule[-5pt]{0pt}{18pt} \\ 
-		 \multicolumn{1}{|l|}{Log-Euclidean} & $\distLE = \lVert \log(\P_1)-\log(\P_2) \rVert_F$ & $\PmLE = \exp \left( \frac{1}{\Nb} \sum_{\nb=1}^{\Nb} \log(\P_\nb) \right) $ & \cite{arsigny_geometric_2007} 
+		 \multicolumn{1}{|l|}{Log-Euclidean} & $\distLE = \lVert \Log(\P_1)-\Log(\P_2) \rVert_F$ & $\PmLE = \Exp \left( \frac{1}{\Nb} \sum_{\nb=1}^{\Nb} \Log(\P_\nb) \right) $ & \cite{arsigny_geometric_2007} 
 		\rule[-5pt]{0pt}{18pt} \\    
-     \multicolumn{1}{|l|}{Affine-invariant} & $\distAIRM = \lVert \log(\P_1^{-1}\P_2) \rVert_F$ & Algorithm 3 in \cite{fletcher_principal_2004}  & \cite{moakher_differential_2005,fletcher_principal_2004} 
+     \multicolumn{1}{|l|}{Affine-invariant} & $\distAIRM = \lVert \Log(\P_1^{-1}\P_2) \rVert_F$ & Algorithm 3 in \cite{fletcher_principal_2004}  & \cite{moakher_differential_2005,fletcher_principal_2004} 
 		\rule[-5pt]{0pt}{18pt} \\	
 	\multicolumn{1}{|l|}{Kullback-Leibler} & $\divB{KL} = \frac{1}{2} \log \frac{\det(\P_2)}{\det(\P_1)} + \tr(\P_2 \P_1) - \dc$ & Algorithm 1 in \cite{chebbi_means_2012} & \cite{chebbi_means_2012,kang_composite_2009} \rule[-5pt]{0pt}{18pt} \\
 	\multicolumn{1}{|l|}{S-divergence} & $\divB{S} = \log \det(\frac{\P_1+\P_2}{2}) - \frac{1}{2}\log \det(\P_1 \P_2)$ &  Eq. (17-20) in \cite{cherian_efficient_2011} & \cite{sra_positive_2016,cherian_efficient_2011} \rule[-5pt]{0pt}{18pt} \\
