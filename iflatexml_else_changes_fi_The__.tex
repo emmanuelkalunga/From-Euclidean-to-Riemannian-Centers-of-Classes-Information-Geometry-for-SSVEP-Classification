@@ -143,9 +143,9 @@ Using the Fr\'{e}chet distance, and following the development in~\cite{barbaresc
 d_W(\mathcal{N}(\mu_1, \P_1), \mathcal{N}(\mu_2, \P_2)) = |\mu_1 -\mu_2|^2 + \tr \P_1 + \tr \P_2 - 2 \tr \left( \left( \P_1^{1/2} \P_2 \P_1^{1/2} \right)^{1/2} \right) \ .
 \label{eq:dist_wass}
 \end{equation}
-Since means are null in our case, the Wasserstein distance is:
+Since means are null in our case, the Wasserstein distance between to covariance matrices is:
 \begin{equation}
-d_W(\mathcal{N}(\mu_1, \P_1), \mathcal{N}(\mu_2, \P_2)) = \tr \P_1 + \tr \P_2 - 2 \tr \left( \left( \P_1^{1/2} \P_2 \P_1^{1/2} \right)^{1/2} \right) \ .
+d_W(\P_1, \P_2) = \tr \P_1 + \tr \P_2 - 2 \tr \left( \left( \P_1^{1/2} \P_2 \P_1^{1/2} \right)^{1/2} \right) \ .
 \label{eq:dist_wass_2}
 \end{equation}
 %Indeed the measure can be seen as the cost of moving 
