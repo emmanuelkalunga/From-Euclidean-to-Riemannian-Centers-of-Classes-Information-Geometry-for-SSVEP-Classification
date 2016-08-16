@@ -243,9 +243,10 @@ A new unlabeled test trial $\Y$ is predicted to belong to the class whose mean $
 	\State \textbf{for} $l$ = 1 \textbf{to} $L$ \textbf{do}
 	\State \quad Compute center of class : $\Pm_l=\Rm(\{\P_{j}:j \in \mathcal{J}\})$
 	\State \quad Compute distances $d_j = \dist(\P_j, \Pm_l)$
-	\State \quad Compute zscores $z_j = (d_j - m)/\sigma$
+	\State \quad Compute mean $m$ and standard deviation $sigma$ of distances $\{d_j\}$
 	\State \quad \textbf{for} $j$ \in \mathcal{J} \textbf{do}
-	\State \quad \quad \textbf{if} $z_j>z_{th}$ \textbf{then} $\mathcal{J} = \mathcal{J} \ j$
+	\State \quad \quad Compute z-score $z_j = (d_j - m)/\sigma$
+	\State \quad \quad \textbf{if} $z_j>z_{th}$ \textbf{then} $\mathcal{J} = \mathcal{J} \backslash j$
 	\State \textbf{end}
 	\State \textbf{return} $\Pm_L$
 	\end{algorithmic}
