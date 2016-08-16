@@ -138,14 +138,14 @@ The Wassertein distance of order $p$ is defined as:
 W_p(\eta,\nu) =  \left( \inf_{\pi \in \Pi(\eta,\nu)} \int d(x,y)^p d\pi(x,y) \right)^{1/p}
 \label{eq:wasser}
 \end{equation}
-Using the Fr\'{e}chet distance, and following the development in~\cite{barbaresco_geometric_2011}, the Wasserstein distance of multivariate Gaussian measure $\Eta$ and $\Nu$ with means $\mu_1$ and $\mu_2$, and covariance matrices $\P_1 and $\P_2, is expressed as:
+Using the Fr\'{e}chet distance, and following the development in~\cite{barbaresco_geometric_2011}, the Wasserstein distance of multivariate Gaussian measure $\Eta$ and $\Nu$ with means $\mu_1$ and $\mu_2$, and covariance matrices $\P_1$ and $\P_2$, is expressed as:
 \begin{equation}
 d_W(N(\mu_1, \P_1),N(\mu_2, \P_2)) = |\mu_1 -\mu_2|^2 + \tr \P_1 + \tr \P_2 - 2 \tr \left( \left( \P_1^{1/2} \P_2 \P_1^{1/2} \right)^{1/2} \right) \ .
 \label{eq:dist_wass}
 \end{equation}
 Since means are null in our case, the Wasserstein distance is:
 \begin{equation}
-d_W(N(\mu_X, \Sigma_X),N(\mu_Y, \Sigma_Y)) = \tr \P_1 + \tr \P_2 - 2 \tr \left( \left( \P_1^{1/2} \P_2 \P_1^{1/2} \right)^{1/2} \right) \ .
+d_W(N(\mu_1, \P_1),N(\mu_2, \P_2)) = \tr \P_1 + \tr \P_2 - 2 \tr \left( \left( \P_1^{1/2} \P_2 \P_1^{1/2} \right)^{1/2} \right) \ .
 \label{eq:dist_wass_2}
 \end{equation}
 %Indeed the measure can be seen as the cost of moving 
@@ -172,6 +172,9 @@ All these distances and divergences are summed up in Table~\ref{tab:dist}.
   \caption{Distances, divergences and means considered in the experimental study.}
   \label{tab:dist}
 \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{Minimum Distance to Mean classifier for SSVEP}
