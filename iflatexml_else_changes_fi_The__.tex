@@ -209,8 +209,9 @@ The associated covariance matrix $\P \in \mathcal{M}_{\dF\dc}$ is estimated usin
 
 For SSVEP classification, $\dK = \dF + 1$ classes are considered: one class for each target frequency, and one for the resting state.
 As described in Algorithm~\ref{alg:mdm}, from $\dT$ labelled training trials $ \left\{ \X_{\ti} \right\}_{\ti=1}^{\dT}$ recorded per subject, $\dK$ centers of classes $\Pm^{(\ci)}$ are estimated (step~\ref{op:class_center}). 
-In this step, outliers matrices are removed to have a reliable mean estimation using Algorithm~\ref{alg:center_estimation} (TODO: with a z-score threshold $z_{th} = 2.5$ and a number of iterations $L=2$) \cite{barachant2013riemannian}.
 A new unlabeled test trial $\Y$ is predicted to belong to the class whose mean $\Pm^{(\ci)}$ is the closest to the trial covariance matrix, w.r.t. one of the distances from Table~\ref{tab:dist} (step~\ref{op:decision}).
+
+For estimation of centers of classes in step~\ref{op:class_center}, outliers matrices are removed to have a reliable mean estimation using Algorithm~\ref{alg:center_estimation} \cite{barachant2013riemannian}. TODO: It is used with a z-score threshold $z_{th} = 2.5$ and a number of iterations $L=2$.
 
 \begin{algorithm}
 \caption{Minimum Distance to Mean Classifier}
